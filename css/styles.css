@@ -99,16 +99,15 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 8px;
 }
-.nav-logo .dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--neon);
-  box-shadow: 0 0 8px var(--neon);
-  animation: pulse-dot 2.4s ease-in-out infinite;
+.nav-logo-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px var(--neon));
+  animation: pulse-icon 2.4s ease-in-out infinite;
 }
-@keyframes pulse-dot {
+@keyframes pulse-icon {
   0%,100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.5; transform: scale(0.85); }
+  50%      { opacity: 0.75; transform: scale(0.92); }
 }
 .nav-links {
   display: flex;
@@ -1068,11 +1067,19 @@ footer {
   margin: 0 auto;
 }
 .footer-brand-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+.logo-os-accent {
+  color: var(--neon);
+  font-size: 1.25em;
+  margin-left: 2px;
 }
 .footer-brand-desc {
   font-size: 13px;
