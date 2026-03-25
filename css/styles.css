@@ -1182,3 +1182,48 @@ footer {
   .waitlist-card { padding: 32px 24px; }
   .feature-cell { padding: 28px; }
 }
+
+/* ─── UTILITIES & ACCENTS ─────────────────────────────── */
+.text-accent  { color: var(--neon); }
+.text-warning { color: #ffc800; }
+.text-error   { color: #ff5050; }
+.text-muted   { color: var(--muted); }
+.bg-surface   { background: var(--surface) !important; }
+
+.container-wide { max-width: 1100px !important; margin: 0 auto; }
+.text-center { text-align: center; }
+.justify-center { justify-content: center; }
+
+.mb-52 { margin-bottom: 52px; }
+.mb-48 { margin-bottom: 48px; }
+.fs-14 { font-size: 14px; }
+.fs-28 { font-size: 28px; }
+
+.hero-check { color: var(--neon); font-size: 11px; font-weight: bold; }
+.db-unit { font-size: 10px; color: var(--muted); margin-left: 2px; }
+
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.section-h2.mb-lg { margin-bottom: 56px; }
+.section-h2.mb-md { margin-bottom: 12px; }
+
+.section-intro {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 56px;
+  line-height: 1.75;
+}
+.section-intro.centered { margin-left: auto; margin-right: auto; }
+.section-intro.mb-sm { margin-bottom: 0; }
+
+.db-station-bar-fill.warning { background: #ffc800 !important; }
+.db-station-bar-fill.neon    { background: var(--neon) !important; }
+.db-station-bar-fill.on-track { width: 72% !important; background: var(--neon); }
+.db-station-bar-fill.exceeds  { width: 88% !important; background: var(--neon); }
+.db-station-bar-fill.near      { width: 41% !important; background: #ffc800; }

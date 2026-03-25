@@ -25,15 +25,6 @@
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg:#000; --surface:#0a0a0a; --neon:#39FF14; --text:#f5f5f5; --muted:#6b6b6b;
-      --font-display:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
-    }
-    body { background:var(--bg); color:var(--text); font-family:var(--font-body); margin:0; overflow-x:hidden; }
-    .nav-logo-icon { width:24px; height:24px; filter:drop-shadow(0 0 5px var(--neon)); animation:pulse-icon 2.4s ease-in-out infinite; }
-    @keyframes pulse-icon { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.75;transform:scale(0.92)} }
-  </style>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -47,7 +38,7 @@
   <a href="#how-it-works" class="mobile-link">How It Works</a>
   <a href="#calculator"  class="mobile-link">Calculator</a>
   <a href="#pricing"     class="mobile-link">Pricing</a>
-  <a href="#waitlist"    class="mobile-link" style="color:var(--neon)">Join Waitlist</a>
+  <a href="#waitlist"    class="mobile-link text-accent">Join Waitlist</a>
 </div>
 
 <!-- ═══════════════════════════════════════════════
@@ -115,17 +106,17 @@
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item">
-          <span style="color:var(--neon);font-size:11px;">✓</span>
+          <span class="hero-check">✓</span>
           &nbsp;No spreadsheets
         </div>
         <div class="hero-trust-dot"></div>
         <div class="hero-trust-item">
-          <span style="color:var(--neon);font-size:11px;">✓</span>
+          <span class="hero-check">✓</span>
           &nbsp;No WhatsApp reports
         </div>
         <div class="hero-trust-dot"></div>
         <div class="hero-trust-item">
-          <span style="color:var(--neon);font-size:11px;">✓</span>
+          <span class="hero-check">✓</span>
           &nbsp;No guesswork
         </div>
       </div>
@@ -148,18 +139,18 @@
           <div class="db-metrics">
             <div class="db-metric">
               <div class="db-metric-label">PMS Today</div>
-              <div class="db-metric-value neon">42,850<span style="font-size:10px;color:var(--muted)"> L</span></div>
+              <div class="db-metric-value neon">42,850<span class="db-unit"> L</span></div>
               <div class="db-metric-delta">↑ 8.3% vs target</div>
             </div>
             <div class="db-metric">
               <div class="db-metric-label">AGO Today</div>
-              <div class="db-metric-value">18,200<span style="font-size:10px;color:var(--muted)"> L</span></div>
-              <div class="db-metric-delta" style="color:#ffc800">— 1.1% vs target</div>
+              <div class="db-metric-value">18,200<span class="db-unit"> L</span></div>
+              <div class="db-metric-delta text-warning">— 1.1% vs target</div>
             </div>
             <div class="db-metric">
               <div class="db-metric-label">Cash O/S</div>
-              <div class="db-metric-value" style="color:#ff5050;">₦2.4M</div>
-              <div class="db-metric-delta" style="color:#ff5050;">2 stations</div>
+              <div class="db-metric-value text-error">₦2.4M</div>
+              <div class="db-metric-delta text-error">2 stations</div>
             </div>
           </div>
           <div class="db-chart-area">
@@ -175,21 +166,21 @@
             <div class="db-station-row">
               <span class="db-station-name">STATION A · Abuja</span>
               <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill" style="width:88%;background:var(--neon);"></div>
+                <div class="db-station-bar-fill exceeds"></div>
               </div>
               <span class="db-station-badge badge-green">Exceeds</span>
             </div>
             <div class="db-station-row">
               <span class="db-station-name">STATION B · Lagos</span>
               <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill" style="width:72%;background:var(--neon);"></div>
+                <div class="db-station-bar-fill on-track"></div>
               </div>
               <span class="db-station-badge badge-green">On Track</span>
             </div>
             <div class="db-station-row">
               <span class="db-station-name">STATION C · Kano</span>
               <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill" style="width:41%;background:#ffc800;"></div>
+                <div class="db-station-bar-fill near"></div>
               </div>
               <span class="db-station-badge badge-yellow">Near Target</span>
             </div>
@@ -213,12 +204,12 @@
      FEATURES
 ═══════════════════════════════════════════════ -->
 <section id="features" class="section-pad">
-  <div class="container" style="max-width:1100px">
+  <div class="container container-wide">
     <div class="section-label fade-up">Core Capabilities</div>
-    <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">
+    <h2 class="section-h2 fade-up">
       Every part of your operation,<br>accounted for.
     </h2>
-    <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);max-width:520px;margin-bottom:56px;line-height:1.75;">
+    <p class="section-intro fade-up delay-1">
       Built around how fuel stations actually run in Nigeria — not adapted from a generic platform.
     </p>
     <div class="features-grid">
@@ -270,9 +261,9 @@
      HOW IT WORKS
 ═══════════════════════════════════════════════ -->
 <section id="how-it-works" class="section-pad">
-  <div class="container" style="max-width:1100px">
+  <div class="container container-wide">
     <div class="section-label fade-up">The System</div>
-    <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:56px;">
+    <h2 class="section-h2 mb-lg fade-up">
       One system. Every layer of your business.
     </h2>
     <div class="hiw-steps">
@@ -299,14 +290,14 @@
 <!-- ═══════════════════════════════════════════════
      PROFIT CALCULATOR
 ═══════════════════════════════════════════════ -->
-<section id="calculator" class="section-pad" style="background:var(--surface);">
+<section id="calculator" class="section-pad bg-surface">
   <div class="container">
-    <div class="container-tight" style="text-align:center;margin-bottom:48px;">
-      <div class="section-label fade-up" style="justify-content:center;">ROI Calculator</div>
-      <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;">
+    <div class="container-tight text-center mb-48">
+      <div class="section-label fade-up justify-center">ROI Calculator</div>
+      <h2 class="section-h2 mb-md fade-up">
         See what you've been losing.
       </h2>
-      <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);">
+      <p class="section-intro centered mb-sm fade-up delay-1">
         Adjust the slider to match your operation size.
       </p>
     </div>
@@ -340,7 +331,7 @@
           </div>
           <div class="calc-metric">
             <div class="calc-metric-label">Return on Investment</div>
-            <div class="calc-metric-value"><span id="metric-roi">32</span><span style="font-size:14px;color:var(--muted)">%</span></div>
+            <div class="calc-metric-value"><span id="metric-roi">32</span><span class="fs-14 text-muted">%</span></div>
             <div class="calc-metric-sub">First-year ROI estimate</div>
           </div>
         </div>
@@ -412,14 +403,14 @@
 <!-- ═══════════════════════════════════════════════
      PRICING
 ═══════════════════════════════════════════════ -->
-<section id="pricing" class="section-pad" style="background:var(--surface);">
+<section id="pricing" class="section-pad bg-surface">
   <div class="container">
-    <div style="text-align:center;margin-bottom:52px;">
-      <div class="section-label fade-up" style="justify-content:center;">Pricing</div>
-      <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;">
+    <div class="text-center mb-52">
+      <div class="section-label fade-up justify-center">Pricing</div>
+      <h2 class="section-h2 mb-md fade-up">
         Straightforward pricing.<br>No surprises.
       </h2>
-      <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);">
+      <p class="section-intro centered mb-sm fade-up delay-1">
         Free during beta. Locked-in pricing for early adopters.
       </p>
     </div>
@@ -440,7 +431,7 @@
       </div>
       <div class="pricing-card featured fade-up delay-1">
         <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier" style="color:var(--neon)">Growth</div>
+        <div class="pricing-tier text-accent">Growth</div>
         <div class="pricing-price">₦49,000<span class="period"> / mo</span></div>
         <p class="pricing-desc">For operators running 2–5 stations who need full network control.</p>
         <div class="pricing-divider"></div>
@@ -457,7 +448,7 @@
       </div>
       <div class="pricing-card fade-up delay-2">
         <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price" style="font-size:28px;">Custom</div>
+        <div class="pricing-price fs-28">Custom</div>
         <p class="pricing-desc">For networks of 6+ stations requiring dedicated support and custom configuration.</p>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
