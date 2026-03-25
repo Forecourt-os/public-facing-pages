@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForecourtOS — Built for Fuel Station Operators in Nigeria</title>
+  <meta name="description" content="The operating system for Nigerian fuel station owners. Real-time pump, stock, and cash visibility across every station you run." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     MOBILE MENU
+═══════════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#features"    class="mobile-link">Features</a>
+  <a href="#how-it-works" class="mobile-link">How It Works</a>
+  <a href="#calculator"  class="mobile-link">Calculator</a>
+  <a href="#pricing"     class="mobile-link">Pricing</a>
+  <a href="#waitlist"    class="mobile-link" style="color:var(--neon)">Join Waitlist</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="dot"></span>
+      ForecourtOS
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <button class="nav-cta">
+      Get Early Access
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-radial"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-inner">
+    <!-- Left: Copy -->
+    <div>
+      <div class="hero-eyebrow">
+        <span class="pip"></span>
+        Private Beta · Nigerian Multi-Station Operations
+      </div>
+      <h1 class="hero-h1">
+        Your stations<br>
+        have been running<br>
+        <span class="text-gradient">blind. Not anymore.</span>
+      </h1>
+      <p class="hero-sub">
+        ForecourtOS gives fuel station owners in Nigeria complete visibility across every pump, tank, and naira — in real time, from one screen.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary">
+          Join the Waitlist
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a href="#how-it-works" class="btn-ghost">
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <span style="color:var(--neon);font-size:11px;">✓</span>
+          &nbsp;No spreadsheets
+        </div>
+        <div class="hero-trust-dot"></div>
+        <div class="hero-trust-item">
+          <span style="color:var(--neon);font-size:11px;">✓</span>
+          &nbsp;No WhatsApp reports
+        </div>
+        <div class="hero-trust-dot"></div>
+        <div class="hero-trust-item">
+          <span style="color:var(--neon);font-size:11px;">✓</span>
+          &nbsp;No guesswork
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Dashboard Mockup -->
+    <div class="mockup-wrap">
+      <div class="mockup-glow"></div>
+      <div class="dashboard">
+        <div class="db-titlebar">
+          <div class="db-dots">
+            <div class="db-dot db-dot-r"></div>
+            <div class="db-dot db-dot-y"></div>
+            <div class="db-dot db-dot-g"></div>
+          </div>
+          <span class="db-title">ForecourtOS · Network Overview</span>
+          <div class="db-status-badge">LIVE</div>
+        </div>
+        <div class="db-body">
+          <div class="db-metrics">
+            <div class="db-metric">
+              <div class="db-metric-label">PMS Today</div>
+              <div class="db-metric-value neon">42,850<span style="font-size:10px;color:var(--muted)"> L</span></div>
+              <div class="db-metric-delta">↑ 8.3% vs target</div>
+            </div>
+            <div class="db-metric">
+              <div class="db-metric-label">AGO Today</div>
+              <div class="db-metric-value">18,200<span style="font-size:10px;color:var(--muted)"> L</span></div>
+              <div class="db-metric-delta" style="color:#ffc800">— 1.1% vs target</div>
+            </div>
+            <div class="db-metric">
+              <div class="db-metric-label">Cash O/S</div>
+              <div class="db-metric-value" style="color:#ff5050;">₦2.4M</div>
+              <div class="db-metric-delta" style="color:#ff5050;">2 stations</div>
+            </div>
+          </div>
+          <div class="db-chart-area">
+            <div class="db-chart-header">
+              <span class="db-chart-title">7-Day PMS Volume</span>
+              <span class="db-chart-tag">On Track</span>
+            </div>
+            <div class="db-bars" id="db-bars">
+              <!-- JS-rendered bars -->
+            </div>
+          </div>
+          <div class="db-stations">
+            <div class="db-station-row">
+              <span class="db-station-name">STATION A · Abuja</span>
+              <div class="db-station-bar-wrap">
+                <div class="db-station-bar-fill" style="width:88%;background:var(--neon);"></div>
+              </div>
+              <span class="db-station-badge badge-green">Exceeds</span>
+            </div>
+            <div class="db-station-row">
+              <span class="db-station-name">STATION B · Lagos</span>
+              <div class="db-station-bar-wrap">
+                <div class="db-station-bar-fill" style="width:72%;background:var(--neon);"></div>
+              </div>
+              <span class="db-station-badge badge-green">On Track</span>
+            </div>
+            <div class="db-station-row">
+              <span class="db-station-name">STATION C · Kano</span>
+              <div class="db-station-bar-wrap">
+                <div class="db-station-bar-fill" style="width:41%;background:#ffc800;"></div>
+              </div>
+              <span class="db-station-badge badge-yellow">Near Target</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TICKER
+═══════════════════════════════════════════════ -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker">
+    <!-- JS-duplicated for infinite loop -->
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════ -->
+<section id="features" class="section-pad">
+  <div class="container" style="max-width:1100px">
+    <div class="section-label fade-up">Core Capabilities</div>
+    <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">
+      Every part of your operation,<br>accounted for.
+    </h2>
+    <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);max-width:520px;margin-bottom:56px;line-height:1.75;">
+      Built around how fuel stations actually run in Nigeria — not adapted from a generic platform.
+    </p>
+    <div class="features-grid">
+      <div class="feature-cell fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+          </svg>
+        </div>
+        <div class="feature-title">Pump & Tank Intelligence</div>
+        <p class="feature-desc">Meter readings auto-carry forward. Tank dips reconcile against pump sales. Variance flagged before it becomes a loss.</p>
+        <div class="feature-number">01</div>
+      </div>
+      <div class="feature-cell fade-up delay-1">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="feature-title">Cash-at-Hand Tracking</div>
+        <p class="feature-desc">Every naira is accounted for. Outstanding balances accumulate in a ledger until they're settled — no cash disappears quietly.</p>
+        <div class="feature-number">02</div>
+      </div>
+      <div class="feature-cell fade-up delay-2">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <div class="feature-title">Delivery Reconciliation</div>
+        <p class="feature-desc">Truck dip vs tank dip vs ordered quantity. Shortage detected at the point of delivery. Supplier performance tracked over time.</p>
+        <div class="feature-number">03</div>
+      </div>
+      <div class="feature-cell fade-up delay-3">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10M12 20V4M6 20v-6"/>
+          </svg>
+        </div>
+        <div class="feature-title">Sales vs Target</div>
+        <p class="feature-desc">Exceeds Target. On Track. Near Target. Critical. Every station's performance visible at a glance, updated in real time.</p>
+        <div class="feature-number">04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════ -->
+<section id="how-it-works" class="section-pad">
+  <div class="container" style="max-width:1100px">
+    <div class="section-label fade-up">The System</div>
+    <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:56px;">
+      One system. Every layer of your business.
+    </h2>
+    <div class="hiw-steps">
+      <div class="hiw-connector"></div>
+      <div class="hiw-step fade-up">
+        <div class="hiw-num">01</div>
+        <h3 class="hiw-step-title">Staff enter. System locks.</h3>
+        <p class="hiw-step-desc">Pump attendants log meter readings. Supervisors record tank dips, lodgements, generator usage. Each entry is tied to a shift, a user, and a timestamp — locked after submission.</p>
+      </div>
+      <div class="hiw-step fade-up delay-1">
+        <div class="hiw-num">02</div>
+        <h3 class="hiw-step-title">Reconciliation runs automatically.</h3>
+        <p class="hiw-step-desc">Cash-at-hand calculates itself. Stock variances surface immediately. Anything outside tolerance is flagged before the day ends — not discovered weeks later.</p>
+      </div>
+      <div class="hiw-step fade-up delay-2">
+        <div class="hiw-num">03</div>
+        <h3 class="hiw-step-title">You see everything. From anywhere.</h3>
+        <p class="hiw-step-desc">Your executive dashboard shows every station's health in one view. Sales, cash, alerts, report status — on your phone, without calling anyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PROFIT CALCULATOR
+═══════════════════════════════════════════════ -->
+<section id="calculator" class="section-pad" style="background:var(--surface);">
+  <div class="container">
+    <div class="container-tight" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label fade-up" style="justify-content:center;">ROI Calculator</div>
+      <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;">
+        See what you've been losing.
+      </h2>
+      <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);">
+        Adjust the slider to match your operation size.
+      </p>
+    </div>
+    <div class="calc-wrap">
+      <div class="calc-card fade-up">
+        <div class="calc-toggle-row">
+          <span class="calc-toggle-label">Currency</span>
+          <div class="toggle-pill">
+            <button class="toggle-opt active" id="ngn-btn">₦ NGN</button>
+            <button class="toggle-opt" id="usd-btn">$ USD</button>
+          </div>
+        </div>
+        <div class="calc-slider-label">
+          <span>Number of stations</span>
+          <div>
+            <span class="calc-count" id="station-display">1</span>
+            <span class="calc-count unit"> station</span>
+          </div>
+        </div>
+        <input type="range" id="station-slider" min="1" max="10" value="1" step="1" />
+        <div class="calc-metrics">
+          <div class="calc-metric">
+            <div class="calc-metric-label">Annual Savings</div>
+            <div class="calc-metric-value"><span id="sym">₦</span><span id="metric-savings">1,250,000</span></div>
+            <div class="calc-metric-sub">Operational efficiency</div>
+          </div>
+          <div class="calc-metric">
+            <div class="calc-metric-label">Leakage Prevented</div>
+            <div class="calc-metric-value"><span class="sym2">₦</span><span id="metric-leakage">850,000</span></div>
+            <div class="calc-metric-sub">Theft & shortage recovery</div>
+          </div>
+          <div class="calc-metric">
+            <div class="calc-metric-label">Return on Investment</div>
+            <div class="calc-metric-value"><span id="metric-roi">32</span><span style="font-size:14px;color:var(--muted)">%</span></div>
+            <div class="calc-metric-sub">First-year ROI estimate</div>
+          </div>
+        </div>
+        <p class="calc-disclaimer">
+          * Estimates based on aggregated data from Nigerian multi-station fuel operations. Actual results vary by station size, location, and existing controls.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     WAITLIST
+═══════════════════════════════════════════════ -->
+<section id="waitlist" class="section-pad">
+  <div class="container">
+    <div class="waitlist-card fade-up">
+      <div class="section-label">Early Access</div>
+      <h2 class="waitlist-h">
+        Be first to run<br>your stations smarter.
+      </h2>
+      <p class="waitlist-sub">
+        ForecourtOS is in private beta. Join the waitlist — we'll reach out when your access is ready. No spam. Just your spot in line.
+      </p>
+
+      <form id="waitlist-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control-dark" id="wl-name" placeholder="Emeka Okonkwo" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="form-control-dark" id="wl-email" placeholder="emeka@yourcompany.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone (optional)</label>
+            <input type="tel" class="form-control-dark" id="wl-phone" placeholder="+234 801 234 5678" />
+          </div>
+          <div class="form-group">
+            <label>Number of Stations</label>
+            <input type="number" class="form-control-dark" id="wl-stations" min="1" placeholder="e.g. 3" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Role</label>
+          <select class="form-control-dark" id="wl-role">
+            <option value="">Select your role</option>
+            <option>I'm the Owner / Investor</option>
+            <option>I'm a Station Manager</option>
+            <option>I'm an Area Manager</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Join the Waitlist →</button>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="success-icon">✓</div>
+        <h3>You're on the list.</h3>
+        <p>We'll reach out to <strong id="confirm-email"></strong> when your early access is ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PRICING
+═══════════════════════════════════════════════ -->
+<section id="pricing" class="section-pad" style="background:var(--surface);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px;">
+      <div class="section-label fade-up" style="justify-content:center;">Pricing</div>
+      <h2 class="font-display fade-up" style="font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;">
+        Straightforward pricing.<br>No surprises.
+      </h2>
+      <p class="fade-up delay-1" style="font-size:15px;color:var(--muted);">
+        Free during beta. Locked-in pricing for early adopters.
+      </p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-up">
+        <div class="pricing-tier">Starter</div>
+        <div class="pricing-price">₦0<span class="period"> / mo</span></div>
+        <p class="pricing-desc">Full access during the private beta period. No card required.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>1 station</li>
+          <li><span class="check">✓</span>Pump & tank management</li>
+          <li><span class="check">✓</span>Daily reports</li>
+          <li><span class="check">✓</span>Cash-at-hand tracking</li>
+          <li><span class="check">✓</span>Email support</li>
+        </ul>
+        <button class="pricing-cta">Join Beta</button>
+      </div>
+      <div class="pricing-card featured fade-up delay-1">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier" style="color:var(--neon)">Growth</div>
+        <div class="pricing-price">₦49,000<span class="period"> / mo</span></div>
+        <p class="pricing-desc">For operators running 2–5 stations who need full network control.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>Up to 5 stations</li>
+          <li><span class="check">✓</span>Everything in Starter</li>
+          <li><span class="check">✓</span>Executive dashboard</li>
+          <li><span class="check">✓</span>Delivery reconciliation</li>
+          <li><span class="check">✓</span>Smart alerts engine</li>
+          <li><span class="check">✓</span>Retainer management</li>
+          <li><span class="check">✓</span>Shift management</li>
+        </ul>
+        <button class="pricing-cta featured-cta">Get Early Access</button>
+      </div>
+      <div class="pricing-card fade-up delay-2">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price" style="font-size:28px;">Custom</div>
+        <p class="pricing-desc">For networks of 6+ stations requiring dedicated support and custom configuration.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span>Unlimited stations</li>
+          <li><span class="check">✓</span>Everything in Growth</li>
+          <li><span class="check">✓</span>Dedicated account manager</li>
+          <li><span class="check">✓</span>Custom onboarding</li>
+          <li><span class="check">✓</span>P&L & margin tracking</li>
+          <li><span class="check">✓</span>API access</li>
+        </ul>
+        <button class="pricing-cta">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">
+        <span style="color:var(--neon)">⛽</span> ForecourtOS
+      </div>
+      <p class="footer-brand-desc">
+        The operating system for fuel station retail in Nigeria. Built for owners who run more than one station and need more than a spreadsheet.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social" aria-label="Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.07.36a9 9 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0C13.51 0 11.4 2.11 11.4 4.71c0 .37.04.72.11 1.06C7.55 5.59 4.08 3.7 1.64 0.85a4.73 4.73 0 0 0-.61 2.37c0 1.63.83 3.07 2.1 3.91a4.49 4.49 0 0 1-2.05-.57v.06c0 2.28 1.62 4.18 3.77 4.61a4.54 4.54 0 0 1-2.04.08 4.52 4.52 0 0 0 4.22 3.14A9.06 9.06 0 0 1 0 20.29a12.78 12.78 0 0 0 6.92 2.03c8.3 0 12.84-6.88 12.84-12.85 0-.19 0-.38-.01-.57A9.18 9.18 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="https://github.com/ForecourtOS" class="footer-social" aria-label="GitHub">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" class="footer-social" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#calculator">ROI Calculator</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="https://github.com/ForecourtOS">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 ForecourtOS. All rights reserved.</span>
+    <span class="footer-made">Built in Nigeria.</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
