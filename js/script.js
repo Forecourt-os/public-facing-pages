@@ -55,28 +55,37 @@ $(document).ready(function () {
 
   /* ── LIVE OPERATIONS PULSE (TICKER) ───────────── */
   const tickerItems = [
-    { label: 'NETWORK TOTAL', val: '142,308.2 L', change: 'RECONCILED', up: true },
-    { label: 'ACTIVE PUMPS', val: '84', change: 'LIVE', up: true },
-    { label: 'STATION B (ABUJA)', val: '-14.2 L', change: 'METER VARIANCE', warning: true },
-    { label: 'STATION C (KANO)', val: '-340 L', change: 'DELIVERY SHORTAGE', warning: true },
-    { label: 'STATION A (LAGOS)', val: '18,450 L', change: 'ON TARGET', up: true },
-    { label: 'STATION D (KOGI)', val: '₦1.8M', change: 'UNDER-RECOVERY', dn: true },
-    { label: 'NETWORK STATUS', val: '99.8%', change: 'UPTIME', up: true },
-    { label: 'TOTAL VARIANCES', val: '12', change: 'FLAGGED', warning: true },
+    { label: 'NETWORK TOTAL', val: '142,308.2 L', change: 'RECONCILED', trend: 'up' },
+    { label: 'ACTIVE PUMPS', val: '84', change: 'LIVE', trend: 'stable' },
+    { label: 'STATION B (ABUJA)', val: '-14.2 L', change: 'METER VARIANCE', trend: 'down', warning: true },
+    { label: 'STATION C (KANO)', val: '-340 L', change: 'DELIVERY SHORTAGE', trend: 'down', warning: true },
+    { label: 'STATION A (LAGOS)', val: '18,450 L', change: 'ON TARGET', trend: 'up' },
+    { label: 'STATION D (KOGI)', val: '₦1.8M', change: 'UNDER-RECOVERY', trend: 'down', dn: true },
+    { label: 'NETWORK STATUS', val: '99.8%', change: 'UPTIME', trend: 'stable' },
+    { label: 'TOTAL VARIANCES', val: '12', change: 'FLAGGED', trend: 'stable', warning: true },
   ];
 
   function buildTicker(items) {
     return items.map(function (item) {
       let statusClass = 'up';
+      let indicator = '↑';
+      
+      if (item.trend === 'down') {
+        indicator = '↓';
+        statusClass = 'dn';
+      } else if (item.trend === 'stable') {
+        indicator = '•';
+        statusClass = 'stable';
+      }
+      
       if (item.warning) statusClass = 'warning';
-      if (item.dn)      statusClass = 'dn';
       
       return '<div class="ticker-item">' +
         '<span style="color:var(--muted-2)">' + item.label + '</span>' +
-        '<span class="ticker-sep">/</span>' +
+        '<span class="ticker-sep">-</span>' +
         '<span class="val">' + item.val + '</span>' +
-        '<span class="ticker-sep">/</span>' +
-        '<span class="' + statusClass + '">' + item.change + '</span>' +
+        '<span class="ticker-sep">-</span>' +
+        '<span class="' + statusClass + '">' + indicator + ' ' + item.change + '</span>' +
         '</div>';
     }).join('');
   }
