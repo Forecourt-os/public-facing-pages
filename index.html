@@ -207,27 +207,12 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════
-     LIVE OPERATIONS PULSE
+     LIVE OPERATIONS PULSE (ANIMATED TICKER)
 ═══════════════════════════════════════════════ -->
 <section class="pulse-bar">
-  <div class="pulse-inner">
-    <div class="pulse-item">
-      <span class="pulse-label">Total Liters Reconciled Today:</span>
-      <span class="pulse-value">142,308.2L</span>
-    </div>
-    <div class="pulse-item">
-      <span class="pulse-sep">|</span>
-    </div>
-    <div class="pulse-item">
-      <span class="pulse-label">Active Pumps Monitored:</span>
-      <span class="pulse-value">84</span>
-    </div>
-    <div class="pulse-item">
-      <span class="pulse-sep">|</span>
-    </div>
-    <div class="pulse-item">
-      <span class="pulse-label">Total Variances Flagged:</span>
-      <span class="pulse-value">12</span>
+  <div class="ticker-wrapper">
+    <div id="ticker" class="ticker-content">
+      <!-- JS-populated content for seamless loop -->
     </div>
   </div>
 </section>

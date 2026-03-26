@@ -53,28 +53,32 @@ $(document).ready(function () {
     });
   }
 
-  /* ── TICKER ───────────────────────────────────── */
+  /* ── LIVE OPERATIONS PULSE (TICKER) ───────────── */
   const tickerItems = [
-    { label: 'STATION A · PMS', val: '18,450 L', change: '↑ 6.2%', up: true },
-    { label: 'STATION B · AGO', val: '9,200 L', change: '↑ 2.1%', up: true },
-    { label: 'STATION C · PMS', val: '11,800 L', change: '↓ 3.4%', up: false },
-    { label: 'NETWORK · Cash O/S', val: '₦2.4M', change: '2 stations', up: false },
-    { label: 'STATION A · Variance', val: '0.18L/20L', change: 'Within tolerance', up: true },
-    { label: 'STATION B · Retainer', val: '₦840,000', change: 'Low balance', up: false },
-    { label: 'STATION C · Report', val: 'Submitted', change: '08:42 AM', up: true },
-    { label: 'DELIVERY · Shortage', val: '340 L', change: 'Flagged', up: false },
+    { label: 'NETWORK TOTAL', val: '142,308.2 L', change: 'RECONCILED', up: true },
+    { label: 'ACTIVE PUMPS', val: '84', change: 'LIVE', up: true },
+    { label: 'STATION B (ABUJA)', val: '-14.2 L', change: 'METER VARIANCE', warning: true },
+    { label: 'STATION C (KANO)', val: '-340 L', change: 'DELIVERY SHORTAGE', warning: true },
+    { label: 'STATION A (LAGOS)', val: '18,450 L', change: 'ON TARGET', up: true },
+    { label: 'STATION D (KOGI)', val: '₦1.8M', change: 'UNDER-RECOVERY', dn: true },
+    { label: 'NETWORK STATUS', val: '99.8%', change: 'UPTIME', up: true },
+    { label: 'TOTAL VARIANCES', val: '12', change: 'FLAGGED', warning: true },
   ];
 
   function buildTicker(items) {
     return items.map(function (item) {
-      return '<span class="ticker-item">' +
+      let statusClass = 'up';
+      if (item.warning) statusClass = 'warning';
+      if (item.dn)      statusClass = 'dn';
+      
+      return '<div class="ticker-item">' +
         '<span style="color:var(--muted-2)">' + item.label + '</span>' +
-        '<span class="ticker-sep">·</span>' +
+        '<span class="ticker-sep">/</span>' +
         '<span class="val">' + item.val + '</span>' +
-        '<span class="ticker-sep">·</span>' +
-        '<span class="' + (item.up ? 'up' : 'dn') + '">' + item.change + '</span>' +
-        '</span>';
-    }).join('<span class="ticker-item"><span class="ticker-sep">——</span></span>');
+        '<span class="ticker-sep">/</span>' +
+        '<span class="' + statusClass + '">' + item.change + '</span>' +
+        '</div>';
+    }).join('');
   }
 
   const $ticker = $('#ticker');

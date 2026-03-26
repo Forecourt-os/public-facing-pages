@@ -1,7 +1,7 @@
 /* ─── TOKENS ─────────────────────────────────────────── */
 :root {
-  --bg:          #000;
-  --surface:     #0a0a0a;
+  --bg:          #384a19;
+  --surface:     #465c20e9;
   --surface-2:   #111;
   --border:      rgba(255,255,255,0.07);
   --border-m:    rgba(255,255,255,0.12);
@@ -9,7 +9,7 @@
   --neon-dim:    rgba(57,255,20,0.10);
   --neon-glow:   rgba(57,255,20,0.35);
   --text:        #f5f5f5;
-  --muted:       #6b6b6b;
+  --muted:       #051e00;
   --muted-2:     #4a4a4a;
   --font-display: 'Roboto', sans-serif;
   --font-body:    'DM Sans', sans-serif;
@@ -515,47 +515,63 @@ img { display: block; max-width: 100%; }
 .badge-yellow { background: rgba(255,200,0,0.12); color: #ffc800; }
 .badge-red    { background: rgba(255,60,60,0.12);  color: #ff3c3c; }
 
-/* ─── LIVE OPERATIONS PULSE ───────────────────────────── */
+/* ─── LIVE OPERATIONS PULSE (ANIMATED TICKER) ────────── */
 .pulse-bar {
-  background: #0a0a0a; /* Dark-grey surface */
+  background: #060606;
   border-top: 1px solid var(--border);
-  border-bottom: 2px solid var(--neon-dim);
-  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
   position: relative;
   z-index: 10;
-}
-.pulse-inner {
+  overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 48px;
 }
-.pulse-item {
+
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  animation: marquee 60s linear infinite;
+  padding-left: 100%; /* Initial offset */
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls half-way since we double the content in JS */
+}
+
+.ticker-item {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-.pulse-label {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
-.pulse-value {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 600;
+
+.ticker-item .val {
   color: var(--neon);
+  font-weight: 600;
   text-shadow: 0 0 10px rgba(57,255,20,0.25);
 }
-.pulse-sep {
+
+.ticker-item .up { color: var(--neon); font-size: 10px; }
+.ticker-item .dn { color: #ff5050; font-size: 10px; font-weight: 700; }
+.ticker-item .warning { color: #ffc800; font-weight: 700; }
+
+.ticker-sep {
   color: var(--muted-2);
-  font-weight: 300;
-  opacity: 0.5;
+  opacity: 0.4;
+  margin: 0 10px;
 }
 
 /* ─── FOUNDER QUOTE ───────────────────────────────────── */
