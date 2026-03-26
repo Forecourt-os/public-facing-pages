@@ -25,7 +25,7 @@ $(document).ready(function () {
   }
 
   // Handle CTA buttons that scroll to waitlist
-  $('.nav-cta, .btn-primary, .pricing-cta').on('click', function() {
+  $('.nav-cta, .btn-primary, .pricing-cta').on('click', function () {
     scrollToTarget($('#waitlist'));
   });
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
     return items.map(function (item) {
       let statusClass = 'up';
       let indicator = '↑';
-      
+
       if (item.trend === 'down') {
         indicator = '↓';
         statusClass = 'dn';
@@ -77,9 +77,9 @@ $(document).ready(function () {
         indicator = '•';
         statusClass = 'stable';
       }
-      
+
       if (item.warning) statusClass = 'warning';
-      
+
       return '<div class="ticker-item">' +
         '<span style="color:var(--muted-2)">' + item.label + '</span>' +
         '<span class="ticker-sep">-</span>' +
@@ -97,36 +97,36 @@ $(document).ready(function () {
   }
 
   /* ── PROFIT CALCULATOR: THE COST OF INACTION ────────── */
-  const PUMP_PRICE_NGN    = 650;
-  const SHRINKAGE_RATE    = 0.007; // 0.7%
-  const RECOVERY_RATE     = 0.0024; // 0.24% saved from reconciliation errors
-  const SETUP_COST_BASE   = 125000; // Setup cost per station
-  const MONTHLY_SUB_BASE  = 25000;  // Monthly sub per station
-  const USD_RATE          = 1600;
+  const PUMP_PRICE_NGN = 650;
+  const SHRINKAGE_RATE = 0.007; // 0.7%
+  const RECOVERY_RATE = 0.0024; // 0.24% saved from reconciliation errors
+  const SETUP_COST_BASE = 125000; // Setup cost per station
+  const MONTHLY_SUB_BASE = 25000;  // Monthly sub per station
+  const USD_RATE = 1600;
 
-  let currency   = 'NGN';
-  let counters   = {};
+  let currency = 'NGN';
+  let counters = {};
   let initialized = false;
 
   function calcValues(stations, volume) {
     const mult = currency === 'NGN' ? 1 : (1 / USD_RATE);
-    
+
     // Annual Revenue Leakage = Stations * Vol * 0.007 * 12 months * Price
     const annualLeakage = stations * volume * SHRINKAGE_RATE * 12 * PUMP_PRICE_NGN * mult;
-    
+
     // Operational Recovery = Stations * Vol * 0.0024 * 12 months * Price
     const operationalRecovery = stations * volume * RECOVERY_RATE * 12 * PUMP_PRICE_NGN * mult;
-    
+
     // Monthly Savings = (Leakage + Recovery) / 12
     const monthlySavings = (annualLeakage + operationalRecovery) / 12;
     const totalSetupCost = stations * SETUP_COST_BASE * mult;
-    
+
     // Payback = Setup Cost / Monthly Savings (approx)
     let payback = totalSetupCost / (monthlySavings || 1);
-    
+
     // Ensure numbers aren't perfectly round for credibility (adding small random jitter or specific salt)
     const leakageFinal = Math.floor(annualLeakage / 100) * 100 + 400; // e.g. .400 suffix
-    const recoveryFinal = Math.floor(operationalRecovery / 100) * 100 + 240; 
+    const recoveryFinal = Math.floor(operationalRecovery / 100) * 100 + 240;
     const paybackFinal = parseFloat(payback.toFixed(1));
 
     return {
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
   function updateCalculator() {
     const stations = parseInt($('#station-slider').val());
-    const volume   = parseInt($('#volume-slider').val());
+    const volume = parseInt($('#volume-slider').val());
     const v = calcValues(stations, volume);
 
     if (!initialized) {
@@ -155,11 +155,11 @@ $(document).ready(function () {
           duration: 1.2, separator: ',', useGrouping: true,
           formattingFn: formatNum
         });
-        counters.payback = new countUp.CountUp('metric-payback', v.payback, { 
-          duration: 1.0, 
-          decimalPlaces: 1 
+        counters.payback = new countUp.CountUp('metric-payback', v.payback, {
+          duration: 1.0,
+          decimalPlaces: 1
         });
-        
+
         counters.leakage.start();
         counters.recovery.start();
         counters.payback.start();
@@ -182,8 +182,8 @@ $(document).ready(function () {
     updateCalculator();
   }
 
-  $('#ngn-btn').on('click', function() { setCurrency('NGN'); });
-  $('#usd-btn').on('click', function() { setCurrency('USD'); });
+  $('#ngn-btn').on('click', function () { setCurrency('NGN'); });
+  $('#usd-btn').on('click', function () { setCurrency('USD'); });
 
   $('#station-slider').on('input', function () {
     const n = parseInt($(this).val());
@@ -209,12 +209,30 @@ $(document).ready(function () {
     $('#volume-slider').trigger('input');
   }
 
-  /* ── WAITLIST FORM ────────────────────────────── */
+  /* ── WAITLIST FORM (EMAIL CAPTURE) ───────────── */
   $('#waitlist-form').on('submit', function (e) {
     e.preventDefault();
-    // TODO: replace with actual API POST endpoint
-    $(this).fadeOut(300, function () {
-      $('#form-success').fadeIn(400);
+    const $form = $(this);
+    const $submitBtn = $('#wl-submit');
+    const originalText = $submitBtn.text();
+
+    $submitBtn.text('Sending...').prop('disabled', true);
+
+    $.ajax({
+      url: "https://formspree.io/f/mykbzkng",
+      method: "POST",
+      data: $form.serialize(),
+      dataType: "json",
+      success: function () {
+        $form.fadeOut(300, function () {
+          $('#form-success').fadeIn(400);
+          scrollToTarget($('#waitlist'));
+        });
+      },
+      error: function () {
+        $submitBtn.text('Try Again').prop('disabled', false);
+        alert('Action failed. Please try again or contact forecourtos@gmail.com directly.');
+      }
     });
   });
 

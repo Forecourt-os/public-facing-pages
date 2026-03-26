@@ -444,16 +444,16 @@
 
       <form id="waitlist-form" class="wl-form">
         <div class="input-group">
-          <input type="text" id="wl-name" placeholder="Your Full Name" required>
+          <input type="text" id="wl-name" name="Name" placeholder="Your Full Name" required>
         </div>
         <div class="input-group">
-          <input type="email" id="wl-email" placeholder="Business Email" required>
+          <input type="email" id="wl-email" name="Email" placeholder="Business Email" required>
         </div>
         <div class="input-group">
-          <input type="tel" id="wl-phone" placeholder="WhatsApp Number (for verification)" required>
+          <input type="tel" id="wl-phone" name="Phone" placeholder="WhatsApp Number (for verification)" required>
         </div>
         <div class="input-group">
-          <select id="wl-stations" required>
+          <select id="wl-stations" name="Stations" required>
             <option value="" disabled selected>How many stations do you manage?</option>
             <option value="1">1 Station</option>
             <option value="2-5">2 - 5 Stations</option>
@@ -461,7 +461,7 @@
             <option value="11+">11+ Stations (Enterprise)</option>
           </select>
         </div>
-        <button type="submit" class="btn-primary w-full">Request Access for My Fleet</button>
+        <button type="submit" id="wl-submit" class="btn-primary w-full">Request Access for My Fleet</button>
         <p class="fs-14 text-muted mt-12 text-center">No spam. Only operational updates.</p>
       </form>
 
