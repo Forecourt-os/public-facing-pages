@@ -670,52 +670,160 @@ img { display: block; max-width: 100%; }
 
 /* ─── HOW IT WORKS ────────────────────────────────────── */
 #how-it-works { background: var(--surface); }
-.hiw-line {
-  border-top: 1px solid var(--border);
-  margin: 40px 0;
-}
+
 .hiw-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Vertical line connecting steps */
+.hiw-steps::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 20px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border-m) 10%, var(--border-m) 90%, transparent);
+}
+
+.hiw-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
   position: relative;
 }
-.hiw-connector {
-  position: absolute;
-  top: 22px;
-  left: calc(33.33% - 10px);
-  right: calc(33.33% - 10px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-m) 20%, var(--border-m) 80%, transparent);
+
+.hiw-step {
+  position: relative;
+  z-index: 2;
 }
-.hiw-step { position: relative; }
+
 .hiw-num {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--neon);
-  letter-spacing: 0.08em;
-  margin-bottom: 18px;
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  background: var(--surface);
+  width: fit-content;
+  padding-right: 12px;
 }
-.hiw-num::after {
+
+.hiw-num::before {
   content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-m);
+  border-radius: 50%;
+  background: var(--bg);
+  position: absolute;
+  left: -20px;
+  z-index: -1;
 }
+
 .hiw-step-title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
+
+.hiw-step-h3 {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
 .hiw-step-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* Benefit / So What Section */
+.hiw-benefit {
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid var(--neon);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.hiw-benefit-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.hiw-benefit-text {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Proof Strips (Visuals) */
+.hiw-visual-wrap {
+  position: relative;
+}
+
+.hiw-visual-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle at center, var(--neon-dim) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hiw-proof-strip {
+  border: 1px solid var(--border-m);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hiw-row:nth-child(even) .hiw-proof-strip {
+  transform: perspective(1000px) rotateY(8deg) rotateX(4deg);
+}
+
+/* Swap column order for even rows to alternate visuals */
+.hiw-row:nth-child(even) .hiw-step {
+  grid-column: 2;
+}
+
+.hiw-row:nth-child(even) .hiw-visual-wrap {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hiw-row:hover .hiw-proof-strip {
+  transform: perspective(1000px) rotateY(0) rotateX(0) scale(1.02);
+}
+
+.hiw-proof-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ─── CALCULATOR ──────────────────────────────────────── */
