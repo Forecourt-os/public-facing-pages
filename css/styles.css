@@ -178,9 +178,9 @@ img { display: block; max-width: 100%; }
 
 /* ─── HERO ────────────────────────────────────────────── */
 #hero {
-  padding: 160px 0 100px;
+  padding: 160px 0 60px; /* Reduced bottom padding */
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to allow overlap */
 }
 .hero-bg {
   position: absolute;
@@ -316,6 +316,8 @@ img { display: block; max-width: 100%; }
 /* ─── DASHBOARD MOCKUP ────────────────────────────────── */
 .mockup-wrap {
   position: relative;
+  margin-bottom: -120px; /* Overlap into the next section */
+  z-index: 20;
 }
 .mockup-glow {
   position: absolute;
@@ -513,37 +515,91 @@ img { display: block; max-width: 100%; }
 .badge-yellow { background: rgba(255,200,0,0.12); color: #ffc800; }
 .badge-red    { background: rgba(255,60,60,0.12);  color: #ff3c3c; }
 
-/* ─── TICKER ──────────────────────────────────────────── */
-.ticker-wrap {
+/* ─── LIVE OPERATIONS PULSE ───────────────────────────── */
+.pulse-bar {
+  background: #0a0a0a; /* Dark-grey surface */
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  background: #030303;
+  border-bottom: 2px solid var(--neon-dim);
+  padding: 24px 0;
+  position: relative;
+  z-index: 10;
 }
-.ticker-track {
-  display: inline-flex;
-  gap: 64px;
-  animation: ticker 28s linear infinite;
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: inline-flex;
+.pulse-inner {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.pulse-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pulse-label {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--muted-2);
-  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
-.ticker-item .val { color: var(--muted); }
-.ticker-item .up  { color: var(--neon); }
-.ticker-item .dn  { color: #ff5050; }
-.ticker-sep { color: var(--border-m); }
+.pulse-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(57,255,20,0.25);
+}
+.pulse-sep {
+  color: var(--muted-2);
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+/* ─── FOUNDER QUOTE ───────────────────────────────────── */
+.founder-quote {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.founder-blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 32px;
+  position: relative;
+}
+.founder-blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 60px;
+  color: var(--neon-dim);
+  opacity: 0.4;
+}
+.founder-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.founder-line {
+  width: 40px;
+  height: 2px;
+  background: var(--neon);
+}
+.founder-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
 
 /* ─── FEATURES ────────────────────────────────────────── */
 #features { background: var(--bg); }
