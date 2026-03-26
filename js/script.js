@@ -166,10 +166,8 @@ $(document).ready(function () {
   /* ── WAITLIST FORM ────────────────────────────── */
   $('#waitlist-form').on('submit', function (e) {
     e.preventDefault();
-    const email = $('#wl-email').val();
     // TODO: replace with actual API POST endpoint
     $(this).fadeOut(300, function () {
-      $('#confirm-email').text(email);
       $('#form-success').fadeIn(400);
     });
   });

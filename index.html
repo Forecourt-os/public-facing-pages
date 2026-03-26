@@ -3,8 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ForecourtOS — Built for Fuel Station Operators in Nigeria</title>
-  <meta name="description" content="The operating system for Nigerian fuel station owners. Real-time pump, stock, and cash visibility across every station you run." />
+  <title>ForecourtOS — Stop Running Your Stations Blind</title>
+  <meta name="title" content="ForecourtOS — Stop Running Your Stations Blind">
+  <meta name="description" content="The operating system for Nigerian fuel station owners. Eliminate pump fraud, reconcile tanks in real-time, and see your cash-on-hand from anywhere.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://forecourtos.com/">
+  <meta property="og:title" content="ForecourtOS: The Truth Behind Your Pumps">
+  <meta property="og:description" content="Eliminate manager fraud and 'ghost liters.' Real-time pump, tank, and cash visibility across every station you run.">
+  <meta property="og:image" content="https://forecourtos.com/assets/og-preview-mark-ii.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://forecourtos.com/">
+  <meta property="twitter:title" content="ForecourtOS: Real-time Station Command">
+  <meta property="twitter:description" content="Stop the 9PM manager calls. Get the live data you need to secure your profits.">
+  <meta property="twitter:image" content="https://forecourtos.com/assets/og-preview-mark-ii.png">
+
+  <!-- Favicon & Identity -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#39FF14">
 
   <!-- Resource Hints -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -214,8 +236,8 @@
             <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
           </svg>
         </div>
-        <div class="feature-title">Pump & Tank Intelligence</div>
-        <p class="feature-desc">Meter readings auto-carry forward. Tank dips reconcile against pump sales. Variance flagged before it becomes a loss.</p>
+        <div class="feature-title">Meter & Sales Reconciliation</div>
+        <p class="feature-desc"><strong>Stop the 'Ghost' Litres.</strong> Managers can no longer "edit" yesterday’s closing figures to hide a short. ForecourtOS freezes meter readings at shift-change, forcing an instant reconciliation against your bank deposits. <br><br><strong>Success:</strong> Your paper records and your bank balance finally match to the last Kobo.</p>
         <div class="feature-number">01</div>
       </div>
       <div class="feature-cell fade-up delay-1">
@@ -224,8 +246,8 @@
             <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
         </div>
-        <div class="feature-title">Cash-at-Hand Tracking</div>
-        <p class="feature-desc">Every naira is accounted for. Outstanding balances accumulate in a ledger until they're settled — no cash disappears quietly.</p>
+        <div class="feature-title">Expense & Cash Tracking</div>
+        <p class="feature-desc"><strong>Audit-Proof Your Cash Flow.</strong> Small "miscellaneous" expenses bleed station profits dry. Every Naira spent on-site—from diesel for the gen-set to local levies—is logged and subtracted from sales instantly. <br><br><strong>Success:</strong> Full visibility on "Net Daily Profit" after all site expenses are settled.</p>
         <div class="feature-number">02</div>
       </div>
       <div class="feature-cell fade-up delay-2">
@@ -234,8 +256,8 @@
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
           </svg>
         </div>
-        <div class="feature-title">Delivery Reconciliation</div>
-        <p class="feature-desc">Truck dip vs tank dip vs ordered quantity. Shortage detected at the point of delivery. Supplier performance tracked over time.</p>
+        <div class="feature-title">Tank & Stock Monitoring</div>
+        <p class="feature-desc"><strong>Know Your Wet-Stock Truth.</strong> Stop wondering if your underground tanks are leaking or if a delivery was "light." We automatically flag variances between pump sales and physical dips before the shift ends. <br><br><strong>Success:</strong> Identify delivery shortages and underground leaks in real-time, not at the end of the month.</p>
         <div class="feature-number">03</div>
       </div>
       <div class="feature-cell fade-up delay-3">
@@ -244,8 +266,8 @@
             <path d="M18 20V10M12 20V4M6 20v-6"/>
           </svg>
         </div>
-        <div class="feature-title">Sales vs Target</div>
-        <p class="feature-desc">Exceeds Target. On Track. Near Target. Critical. Every station's performance visible at a glance, updated in real time.</p>
+        <div class="feature-title">Multi-Station Remote Command</div>
+        <p class="feature-desc"><strong>Retire the 9 PM Manager Call.</strong> Stop begging for daily reports via WhatsApp. Access a live "Command Centre" that shows total sales, cash-on-hand, and pump status for every station across the country from your phone. <br><br><strong>Success:</strong> Total operational oversight without setting foot on a forecourt.</p>
         <div class="feature-number">04</div>
       </div>
     </div>
@@ -346,50 +368,45 @@
     <div class="waitlist-card fade-up">
       <div class="section-label">Early Access</div>
       <h2 class="waitlist-h">
-        Be first to run<br>your stations smarter.
+        Request Priority Onboarding
       </h2>
       <p class="waitlist-sub">
-        ForecourtOS is in private beta. Join the waitlist — we'll reach out when your access is ready. No spam. Just your spot in line.
+        We are currently deploying ForecourtOS in limited batches to ensure 100% uptime for every pump. Fill in your details to secure a slot in our next rollout.
       </p>
 
-      <form id="waitlist-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" class="form-control-dark" id="wl-name" placeholder="Emeka Okonkwo" required />
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" class="form-control-dark" id="wl-email" placeholder="emeka@yourcompany.com" required />
-          </div>
+      <form id="waitlist-form" class="wl-form">
+        <div class="input-group">
+          <input type="text" id="wl-name" placeholder="Your Full Name" required>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone (optional)</label>
-            <input type="tel" class="form-control-dark" id="wl-phone" placeholder="+234 801 234 5678" />
-          </div>
-          <div class="form-group">
-            <label>Number of Stations</label>
-            <input type="number" class="form-control-dark" id="wl-stations" min="1" placeholder="e.g. 3" />
-          </div>
+        <div class="input-group">
+          <input type="email" id="wl-email" placeholder="Business Email" required>
         </div>
-        <div class="form-group">
-          <label>Your Role</label>
-          <select class="form-control-dark" id="wl-role">
-            <option value="">Select your role</option>
-            <option>I'm the Owner / Investor</option>
-            <option>I'm a Station Manager</option>
-            <option>I'm an Area Manager</option>
-            <option>Other</option>
+        <div class="input-group">
+          <input type="tel" id="wl-phone" placeholder="WhatsApp Number (for verification)" required>
+        </div>
+        <div class="input-group">
+          <select id="wl-stations" required>
+            <option value="" disabled selected>How many stations do you manage?</option>
+            <option value="1">1 Station</option>
+            <option value="2-5">2 - 5 Stations</option>
+            <option value="6-10">6 - 10 Stations</option>
+            <option value="11+">11+ Stations (Enterprise)</option>
           </select>
         </div>
-        <button type="submit" class="submit-btn">Join the Waitlist →</button>
+        <button type="submit" class="btn-primary w-full">Request Access for My Fleet</button>
+        <p class="fs-14 text-muted mt-12 text-center">No spam. Only operational updates.</p>
       </form>
 
       <div class="form-success" id="form-success">
         <div class="success-icon">✓</div>
-        <h3>You're on the list.</h3>
-        <p>We'll reach out to <strong id="confirm-email"></strong> when your early access is ready.</p>
+        <h3>Request Received, Sir.</h3>
+        <p class="mb-24"><strong>What Happens Next:</strong></p>
+        <ul class="success-steps text-start list-unstyled">
+          <li class="mb-12"><span class="text-accent me-2">01.</span> <strong>Verification:</strong> Our team will review your station count and location (24 hours).</li>
+          <li class="mb-12"><span class="text-accent me-2">02.</span> <strong>Discovery Call:</strong> We’ll reach out via WhatsApp for a 5-minute technical screening.</li>
+          <li class="mb-12"><span class="text-accent me-2">03.</span> <strong>Pilot Launch:</strong> If qualified, we’ll set up your first station in under 40 minutes.</li>
+        </ul>
+        <p class="mt-24 text-muted fs-14">While you wait, we’ve sent a PDF 'Pre-Mortem' guide on identifying common meter-tampering signs to your email.</p>
       </div>
     </div>
   </div>
