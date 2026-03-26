@@ -223,15 +223,18 @@ $(document).ready(function () {
       method: "POST",
       data: $form.serialize(),
       dataType: "json",
-      success: function () {
+      headers: { 'Accept': 'application/json' },
+      success: function (response) {
+        console.log("Success:", response);
         $form.fadeOut(300, function () {
           $('#form-success').fadeIn(400);
           scrollToTarget($('#waitlist'));
         });
       },
-      error: function () {
+      error: function (err) {
+        console.error("Error:", err);
         $submitBtn.text('Try Again').prop('disabled', false);
-        alert('Action failed. Please try again or contact forecourtos@gmail.com directly.');
+        alert('Action failed. Formspree says: ' + (err.responseJSON ? err.responseJSON.error : 'Network Error'));
       }
     });
   });
