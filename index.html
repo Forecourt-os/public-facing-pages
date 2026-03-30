@@ -1,613 +1,901 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ForecourtOS — The Truth About Your Stations</title>
-  <meta name="title" content="ForecourtOS — The Truth About Your Stations">
-  <meta name="description" content="The operating system for Nigerian fuel station owners. Eliminate pump fraud, reconcile tanks in real-time, and see your cash-on-hand from anywhere.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForecourtOS | Stop Fraud & Secure Profits</title>
+    <meta name="title" content="ForecourtOS | Stop Fraud & Secure Profits" />
+    <meta
+      name="description"
+      content="Establish a single source of truth for station performance. Automated reconciliation of wet-stock and financial flows to ensure total fiscal accountability and eliminate leakage."
+    />
+    <!-- SEO tags -->
+    <meta
+      name="keywords"
+      content="forecourt management, fuel station automation Nigeria, petrol station software, eliminate pump fraud, tank reconciliation, forecourt operating system, fuel retail optimization, ForecourtOS, forecourtos"
+    />
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://forecourtos.com/" />
+    <meta
+      property="og:title"
+      content="ForecourtOS: The Operating System for station owners"
+    />
+    <meta
+      property="og:description"
+      content="Tired of 'ghost liters' and manual errors? Secure your fuel business. Every drop, every Naira, and every shift across all your stations."
+    />
+    <meta
+      property="og:image"
+      content="https://forecourtos.com/assets/og-preview-mark-ii.png"
+    />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://forecourtos.com/">
-  <meta property="og:title" content="ForecourtOS: The Truth Behind Your Pumps">
-  <meta property="og:description" content="Eliminate manager fraud and 'ghost liters.' Real-time pump, tank, and cash visibility across every station you run.">
-  <meta property="og:image" content="https://forecourtos.com/assets/og-preview-mark-ii.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://forecourtos.com/" />
+    <meta
+      property="twitter:title"
+      content="ForecourtOS: Real-time Station Command"
+    />
+    <meta
+      property="twitter:description"
+      content="Stop the 9PM manager calls. Get the live data you need to secure your profits."
+    />
+    <meta
+      property="twitter:image"
+      content="https://forecourtos.com/assets/og-preview-mark-ii.png"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://forecourtos.com/">
-  <meta property="twitter:title" content="ForecourtOS: Real-time Station Command">
-  <meta property="twitter:description" content="Stop the 9PM manager calls. Get the live data you need to secure your profits.">
-  <meta property="twitter:image" content="https://forecourtos.com/assets/og-preview-mark-ii.png">
+    <!-- Favicon & Identity -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/FORECOURTOS-ICON.svg"
+    />
+    <link rel="apple-touch-icon" href="./assets/FORECOURTOS-ICON.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#39FF14" />
 
-  <!-- Favicon & Identity -->
-  <link rel="icon" type="image/svg+xml" href="./assets/FORECOURTOS-ICON.svg">
-  <link rel="apple-touch-icon" href="./assets/FORECOURTOS-ICON.svg">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#39FF14">
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://code.jquery.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-  <!-- Resource Hints -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  <link rel="dns-prefetch" href="https://code.jquery.com" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preconnect" href="https://code.jquery.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-<!-- ═══════════════════════════════════════════════
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════
      MOBILE MENU
 ═══════════════════════════════════════════════ -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#features"    class="mobile-link">Features</a>
-  <a href="#how-it-works" class="mobile-link">How It Works</a>
-  <a href="#calculator"  class="mobile-link">Calculator</a>
-  <a href="#pricing"     class="mobile-link">Pricing</a>
-  <a href="#waitlist"    class="mobile-link text-accent">Join Waitlist</a>
-</div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#how-it-works" class="mobile-link">How It Works</a>
+      <a href="#calculator" class="mobile-link">Calculator</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="#waitlist" class="mobile-link text-accent">Join Waitlist</a>
+    </div>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      NAVBAR
 ═══════════════════════════════════════════════ -->
-<nav id="main-nav">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <img src="./assets/FORECOURTOS-ICON.svg" alt="brand logo" srcset="" class="nav-logo-icon">
-      Forecourt<span class="logo-os-accent">OS</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#calculator">Calculator</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-    <button class="nav-cta">
-      Get Early Access
-    </button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <img
+            src="./assets/FORECOURTOS-ICON.svg"
+            alt="brand logo"
+            srcset=""
+            class="nav-logo-icon"
+          />
+          Forecourt<span class="logo-os-accent">OS</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <button class="nav-cta">Get Early Access</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      HERO
 ═══════════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-bg">
-    <div class="hero-radial"></div>
-    <div class="hero-grid"></div>
-  </div>
-  <div class="hero-inner">
-    <!-- Left: Copy -->
-    <div>
-      <div class="hero-eyebrow">
-        <span class="pip"></span>
-        Private Beta · Nigerian Multi-Station Operations
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="hero-radial"></div>
+        <div class="hero-grid"></div>
       </div>
-      <h1 class="hero-h1">
-        The Truth About Your Stations.<br>
-        <span class="text-gradient">No Phone Calls Required.</span>
-      </h1>
-      <p class="hero-sub">
-        Stop running blind. ForecourtOS gives you the real-time data of your pumps and tanks on one screen.
-      </p>
-      <div class="hero-actions">
-        <button class="btn-primary">
-          Request Early Access
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <a href="#how-it-works" class="btn-ghost">
-          See How It Works
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-trust-item">
-          <span class="hero-check">✓</span>
-          &nbsp;No spreadsheets
+      <div class="hero-inner">
+        <!-- Left: Copy -->
+        <div>
+          <div class="hero-eyebrow">
+            <span class="pip"></span>
+            Private Beta · Nigerian Multi-Station Operations
+          </div>
+          <h1 class="hero-h1">
+            The Truth About Your Stations.<br />
+            <span class="text-gradient">No Phone Calls Required.</span>
+          </h1>
+          <p class="hero-sub">
+            Stop running blind. ForecourtOS gives you the real-time data of your
+            pumps and tanks on one screen.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary">
+              Request Early Access
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <a href="#how-it-works" class="btn-ghost"> See How It Works </a>
+          </div>
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <span class="hero-check">✓</span>
+              &nbsp;No spreadsheets
+            </div>
+            <div class="hero-trust-dot"></div>
+            <div class="hero-trust-item">
+              <span class="hero-check">✓</span>
+              &nbsp;No WhatsApp reports
+            </div>
+            <div class="hero-trust-dot"></div>
+            <div class="hero-trust-item">
+              <span class="hero-check">✓</span>
+              &nbsp;No guesswork
+            </div>
+          </div>
         </div>
-        <div class="hero-trust-dot"></div>
-        <div class="hero-trust-item">
-          <span class="hero-check">✓</span>
-          &nbsp;No WhatsApp reports
-        </div>
-        <div class="hero-trust-dot"></div>
-        <div class="hero-trust-item">
-          <span class="hero-check">✓</span>
-          &nbsp;No guesswork
-        </div>
-      </div>
-    </div>
 
-    <!-- Right: Dashboard Mockup -->
-    <div class="mockup-wrap">
-      <div class="mockup-glow"></div>
-      <div class="dashboard">
-        <div class="db-titlebar">
-          <div class="db-dots">
-            <div class="db-dot db-dot-r"></div>
-            <div class="db-dot db-dot-y"></div>
-            <div class="db-dot db-dot-g"></div>
-          </div>
-          <span class="db-title">ForecourtOS · Network Overview</span>
-          <div class="db-status-badge">LIVE</div>
-        </div>
-        <div class="db-body">
-          <div class="db-metrics">
-            <div class="db-metric">
-              <div class="db-metric-label">PMS Today</div>
-              <div class="db-metric-value neon">42,853.78<span class="db-unit"> L</span></div>
-              <div class="db-metric-delta">↑ 8.3% vs target</div>
-            </div>
-            <div class="db-metric">
-              <div class="db-metric-label">AGO Today</div>
-              <div class="db-metric-value">6,238.50<span class="db-unit"> L</span></div>
-              <div class="db-metric-delta text-warning">— 1.1% vs target</div>
-            </div>
-            <div class="db-metric">
-              <div class="db-metric-label">Cash O/S</div>
-              <div class="db-metric-value text-error">₦2.44M</div>
-              <div class="db-metric-delta text-error">2 stations</div>
-            </div>
-          </div>
-          <div class="db-chart-area">
-            <div class="db-chart-header">
-              <span class="db-chart-title">7-Day PMS Volume</span>
-              <span class="db-chart-tag">On Track</span>
-            </div>
-            <div class="db-bars" id="db-bars">
-              <!-- JS-rendered bars -->
-            </div>
-          </div>
-          <div class="db-stations">
-            <div class="db-station-row">
-              <span class="db-station-name">STATION A · Abuja</span>
-              <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill exceeds"></div>
+        <!-- Right: Dashboard Mockup -->
+        <div class="mockup-wrap">
+          <div class="mockup-glow"></div>
+          <div class="dashboard">
+            <div class="db-titlebar">
+              <div class="db-dots">
+                <div class="db-dot db-dot-r"></div>
+                <div class="db-dot db-dot-y"></div>
+                <div class="db-dot db-dot-g"></div>
               </div>
-              <span class="db-station-badge badge-green">Exceeds</span>
+              <span class="db-title">ForecourtOS · Network Overview</span>
+              <div class="db-status-badge">LIVE</div>
             </div>
-            <div class="db-station-row">
-              <span class="db-station-name">STATION B · Abuja</span>
-              <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill on-track"></div>
+            <div class="db-body">
+              <div class="db-metrics">
+                <div class="db-metric">
+                  <div class="db-metric-label">PMS Today</div>
+                  <div class="db-metric-value neon">
+                    42,853.78<span class="db-unit"> L</span>
+                  </div>
+                  <div class="db-metric-delta">↑ 8.3% vs target</div>
+                </div>
+                <div class="db-metric">
+                  <div class="db-metric-label">AGO Today</div>
+                  <div class="db-metric-value">
+                    6,238.50<span class="db-unit"> L</span>
+                  </div>
+                  <div class="db-metric-delta text-warning">
+                    — 1.1% vs target
+                  </div>
+                </div>
+                <div class="db-metric">
+                  <div class="db-metric-label">Cash O/S</div>
+                  <div class="db-metric-value text-error">₦2.44M</div>
+                  <div class="db-metric-delta text-error">2 stations</div>
+                </div>
               </div>
-              <span class="db-station-badge badge-green">On Track</span>
-            </div>
-            <div class="db-station-row">
-              <span class="db-station-name">STATION C · Kogi</span>
-              <div class="db-station-bar-wrap">
-                <div class="db-station-bar-fill near"></div>
+              <div class="db-chart-area">
+                <div class="db-chart-header">
+                  <span class="db-chart-title">7-Day PMS Volume</span>
+                  <span class="db-chart-tag">On Track</span>
+                </div>
+                <div class="db-bars" id="db-bars">
+                  <!-- JS-rendered bars -->
+                </div>
               </div>
-              <span class="db-station-badge badge-yellow">Near Target</span>
+              <div class="db-stations">
+                <div class="db-station-row">
+                  <span class="db-station-name">STATION A · Abuja</span>
+                  <div class="db-station-bar-wrap">
+                    <div class="db-station-bar-fill exceeds"></div>
+                  </div>
+                  <span class="db-station-badge badge-green">Exceeds</span>
+                </div>
+                <div class="db-station-row">
+                  <span class="db-station-name">STATION B · Abuja</span>
+                  <div class="db-station-bar-wrap">
+                    <div class="db-station-bar-fill on-track"></div>
+                  </div>
+                  <span class="db-station-badge badge-green">On Track</span>
+                </div>
+                <div class="db-station-row">
+                  <span class="db-station-name">STATION C · Kogi</span>
+                  <div class="db-station-bar-wrap">
+                    <div class="db-station-bar-fill near"></div>
+                  </div>
+                  <span class="db-station-badge badge-yellow">Near Target</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      LIVE OPERATIONS PULSE (ANIMATED TICKER)
 ═══════════════════════════════════════════════ -->
-<section class="pulse-bar">
-  <div class="ticker-wrapper">
-    <div id="ticker" class="ticker-content">
-      <!-- JS-populated content for seamless loop -->
-    </div>
-  </div>
-</section>
+    <section class="pulse-bar">
+      <div class="ticker-wrapper">
+        <div id="ticker" class="ticker-content">
+          <!-- JS-populated content for seamless loop -->
+        </div>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      FOUNDER STATEMENT
 ═══════════════════════════════════════════════ -->
-<section class="founder-quote section-pad">
-  <div class="container container-tight text-center">
-    <blockquote class="founder-blockquote">
-      "We built ForecourtOS because I sat in your chair and got tired of the 9 PM phone calls. We are currently in a closed pilot with our first 5 stations in North Central Nigeria. Join the queue for the next rollout."
-    </blockquote>
-    <div class="founder-meta">
-      <div class="founder-line"></div>
-      <span class="founder-name">Founder & Operator</span>
-    </div>
-  </div>
-</section>
+    <section class="founder-quote section-pad">
+      <div class="container container-tight text-center">
+        <blockquote class="founder-blockquote">
+          "We built ForecourtOS because I sat in your chair and got tired of the
+          9 PM phone calls. We are currently in a closed pilot with our first 5
+          stations in North Central Nigeria. Join the queue for the next
+          rollout."
+        </blockquote>
+        <div class="founder-meta">
+          <div class="founder-line"></div>
+          <span class="founder-name">Founder & Operator</span>
+        </div>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      FEATURES
 ═══════════════════════════════════════════════ -->
-<section id="features" class="section-pad">
-  <div class="container container-wide">
-    <div class="section-label fade-up">Core Capabilities</div>
-    <h2 class="section-h2 fade-up">
-      Every part of your operation,<br>accounted for.
-    </h2>
-    <p class="section-intro fade-up delay-1">
-      Built around how fuel stations actually run in Nigeria — not adapted from a generic platform.
-    </p>
-    <div class="features-grid">
-      <div class="feature-cell fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
-          </svg>
+    <section id="features" class="section-pad">
+      <div class="container container-wide">
+        <div class="section-label fade-up">Core Capabilities</div>
+        <h2 class="section-h2 fade-up">
+          Every part of your operation,<br />accounted for.
+        </h2>
+        <p class="section-intro fade-up delay-1">
+          Built around how fuel stations actually run in Nigeria — not adapted
+          from a generic platform.
+        </p>
+        <div class="features-grid">
+          <div class="feature-cell fade-up">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+                <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+              </svg>
+            </div>
+            <div class="feature-title">Meter & Sales Reconciliation</div>
+            <p class="feature-desc">
+              <strong>Stop the 'Ghost' Litres.</strong> Managers can no longer
+              "edit" yesterday’s closing figures to hide a short. ForecourtOS
+              freezes meter readings at shift-change, forcing an instant
+              reconciliation against your bank deposits. <br /><br /><strong
+                >Success:</strong
+              >
+              Your paper records and your bank balance finally match to the last
+              Kobo.
+            </p>
+            <div class="feature-number">01</div>
+          </div>
+          <div class="feature-cell fade-up delay-1">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div class="feature-title">Expense & Cash Tracking</div>
+            <p class="feature-desc">
+              <strong>Audit-Proof Your Cash Flow.</strong> Small "miscellaneous"
+              expenses bleed station profits dry. Every Naira spent on-site—from
+              diesel for the gen-set to local levies—is logged and subtracted
+              from sales instantly. <br /><br /><strong>Success:</strong> Full
+              visibility on "Net Daily Profit" after all site expenses are
+              settled.
+            </p>
+            <div class="feature-number">02</div>
+          </div>
+          <div class="feature-cell fade-up delay-2">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div class="feature-title">Tank & Stock Monitoring</div>
+            <p class="feature-desc">
+              <strong>Know Your Wet-Stock Truth.</strong> Stop wondering if your
+              underground tanks are leaking or if a delivery was "light." We
+              automatically flag variances between pump sales and physical dips
+              before the shift ends. <br /><br /><strong>Success:</strong>
+              Identify delivery shortages and underground leaks in real-time,
+              not at the end of the month.
+            </p>
+            <div class="feature-number">03</div>
+          </div>
+          <div class="feature-cell fade-up delay-3">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 20V10M12 20V4M6 20v-6" />
+              </svg>
+            </div>
+            <div class="feature-title">Multi-Station Remote Command</div>
+            <p class="feature-desc">
+              <strong>Retire the 9 PM Manager Call.</strong> Stop begging for
+              daily reports via WhatsApp. Access a live "Command Centre" that
+              shows total sales, cash-on-hand, and pump status for every station
+              across the country from your phone. <br /><br /><strong
+                >Success:</strong
+              >
+              Total operational oversight without setting foot on a forecourt.
+            </p>
+            <div class="feature-number">04</div>
+          </div>
         </div>
-        <div class="feature-title">Meter & Sales Reconciliation</div>
-        <p class="feature-desc"><strong>Stop the 'Ghost' Litres.</strong> Managers can no longer "edit" yesterday’s closing figures to hide a short. ForecourtOS freezes meter readings at shift-change, forcing an instant reconciliation against your bank deposits. <br><br><strong>Success:</strong> Your paper records and your bank balance finally match to the last Kobo.</p>
-        <div class="feature-number">01</div>
       </div>
-      <div class="feature-cell fade-up delay-1">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </div>
-        <div class="feature-title">Expense & Cash Tracking</div>
-        <p class="feature-desc"><strong>Audit-Proof Your Cash Flow.</strong> Small "miscellaneous" expenses bleed station profits dry. Every Naira spent on-site—from diesel for the gen-set to local levies—is logged and subtracted from sales instantly. <br><br><strong>Success:</strong> Full visibility on "Net Daily Profit" after all site expenses are settled.</p>
-        <div class="feature-number">02</div>
-      </div>
-      <div class="feature-cell fade-up delay-2">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
-        <div class="feature-title">Tank & Stock Monitoring</div>
-        <p class="feature-desc"><strong>Know Your Wet-Stock Truth.</strong> Stop wondering if your underground tanks are leaking or if a delivery was "light." We automatically flag variances between pump sales and physical dips before the shift ends. <br><br><strong>Success:</strong> Identify delivery shortages and underground leaks in real-time, not at the end of the month.</p>
-        <div class="feature-number">03</div>
-      </div>
-      <div class="feature-cell fade-up delay-3">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 20V10M12 20V4M6 20v-6"/>
-          </svg>
-        </div>
-        <div class="feature-title">Multi-Station Remote Command</div>
-        <p class="feature-desc"><strong>Retire the 9 PM Manager Call.</strong> Stop begging for daily reports via WhatsApp. Access a live "Command Centre" that shows total sales, cash-on-hand, and pump status for every station across the country from your phone. <br><br><strong>Success:</strong> Total operational oversight without setting foot on a forecourt.</p>
-        <div class="feature-number">04</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      HOW IT WORKS
 ═══════════════════════════════════════════════ -->
-<section id="how-it-works" class="section-pad">
-  <div class="container container-wide">
-    <div class="section-label fade-up">The System</div>
-    <h2 class="section-h2 mb-lg fade-up">
-      One system. Every layer of your business.
-    </h2>
-    <div class="hiw-steps">
-      <!-- 01 — Enforce the Digital Paper Trail -->
-      <div class="hiw-row fade-up">
-        <div class="hiw-step">
-          <div class="hiw-num">01</div>
-          <span class="hiw-step-h3">Data Integrity at the Pump</span>
-          <h3 class="hiw-step-title">Enforce the Digital Paper Trail.</h3>
-          <p class="hiw-step-desc">Attendants log meter readings directly into the OS. Every entry is Password-linked to a specific user and timestamp. Once the shift closes, the data is immutable — impossible to retroactively edit.</p>
-          <div class="hiw-benefit">
-            <span class="hiw-benefit-label">So What:</span>
-            <p class="hiw-benefit-text">No more "accounting" hidden shortages at 10 PM. What happens at the pump stays at the pump.</p>
+    <section id="how-it-works" class="section-pad">
+      <div class="container container-wide">
+        <div class="section-label fade-up">The System</div>
+        <h2 class="section-h2 mb-lg fade-up">
+          One system. Every layer of your business.
+        </h2>
+        <div class="hiw-steps">
+          <!-- 01 — Enforce the Digital Paper Trail -->
+          <div class="hiw-row fade-up">
+            <div class="hiw-step">
+              <div class="hiw-num">01</div>
+              <span class="hiw-step-h3">Data Integrity at the Pump</span>
+              <h3 class="hiw-step-title">Enforce the Digital Paper Trail.</h3>
+              <p class="hiw-step-desc">
+                Attendants log meter readings directly into the OS. Every entry
+                is Password-linked to a specific user and timestamp. Once the
+                shift closes, the data is immutable — impossible to
+                retroactively edit.
+              </p>
+              <div class="hiw-benefit">
+                <span class="hiw-benefit-label">So What:</span>
+                <p class="hiw-benefit-text">
+                  No more "accounting" hidden shortages at 10 PM. What happens
+                  at the pump stays at the pump.
+                </p>
+              </div>
+            </div>
+            <div class="hiw-visual-wrap">
+              <div class="hiw-proof-strip">
+                <img
+                  src="./assets/hiw-visual-1.png"
+                  alt="Data Locked UI Mockup"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="hiw-visual-wrap">
-          <div class="hiw-proof-strip">
-            <img src="./assets/hiw-visual-1.png" alt="Data Locked UI Mockup">
+
+          <!-- 02 — Instant Leak & Fraud Detection -->
+          <div class="hiw-row fade-up delay-1">
+            <div class="hiw-step">
+              <div class="hiw-num">02</div>
+              <span class="hiw-step-h3">Real-Time Variance Logic</span>
+              <h3 class="hiw-step-title">Instant Leak & Fraud Detection.</h3>
+              <p class="hiw-step-desc">
+                The system cross-references pump sales against physical tank
+                dips instantly. If a single liter is unaccounted for — whether
+                through a leak or an unrecorded "side sale" — the OS flags it as
+                a Critical Variance before the attendant leaves the site.
+              </p>
+              <div class="hiw-benefit">
+                <span class="hiw-benefit-label">So What:</span>
+                <p class="hiw-benefit-text">
+                  You stop losses while the staff is still on the premises, not
+                  three weeks later during an audit.
+                </p>
+              </div>
+            </div>
+            <div class="hiw-visual-wrap">
+              <div class="hiw-proof-strip">
+                <img
+                  src="./assets/hiw-visual-2.png"
+                  alt="Variance Alert Notification"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 — Remote Command, Not Just Monitoring -->
+          <div class="hiw-row fade-up delay-2">
+            <div class="hiw-step">
+              <div class="hiw-num">03</div>
+              <span class="hiw-step-h3">Your Station in Your Pocket</span>
+              <h3 class="hiw-step-title">
+                Remote Command, Not Just Monitoring.
+              </h3>
+              <p class="hiw-step-desc">
+                Your dashboard isn't just a report; it’s a live pulse. See
+                cash-on-hand, tank levels, and active alerts across your entire
+                fleet in one view — on any device, from anywhere.
+              </p>
+              <div class="hiw-benefit">
+                <span class="hiw-benefit-label">So What:</span>
+                <p class="hiw-benefit-text">
+                  No more begging for WhatsApp reports. You gain the freedom to
+                  grow because you don't have to be physically present to
+                  prevent theft.
+                </p>
+              </div>
+            </div>
+            <div class="hiw-visual-wrap">
+              <div class="hiw-proof-strip">
+                <img
+                  src="./assets/hiw-visual-3.png"
+                  alt="Fleet Health Dashboard Mobile UI"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- 02 — Instant Leak & Fraud Detection -->
-      <div class="hiw-row fade-up delay-1">
-        <div class="hiw-step">
-          <div class="hiw-num">02</div>
-          <span class="hiw-step-h3">Real-Time Variance Logic</span>
-          <h3 class="hiw-step-title">Instant Leak & Fraud Detection.</h3>
-          <p class="hiw-step-desc">The system cross-references pump sales against physical tank dips instantly. If a single liter is unaccounted for — whether through a leak or an unrecorded "side sale" — the OS flags it as a Critical Variance before the attendant leaves the site.</p>
-          <div class="hiw-benefit">
-            <span class="hiw-benefit-label">So What:</span>
-            <p class="hiw-benefit-text">You stop losses while the staff is still on the premises, not three weeks later during an audit.</p>
-          </div>
-        </div>
-        <div class="hiw-visual-wrap">
-          <div class="hiw-proof-strip">
-            <img src="./assets/hiw-visual-2.png" alt="Variance Alert Notification">
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 — Remote Command, Not Just Monitoring -->
-      <div class="hiw-row fade-up delay-2">
-        <div class="hiw-step">
-          <div class="hiw-num">03</div>
-          <span class="hiw-step-h3">Your Station in Your Pocket</span>
-          <h3 class="hiw-step-title">Remote Command, Not Just Monitoring.</h3>
-          <p class="hiw-step-desc">Your dashboard isn't just a report; it’s a live pulse. See cash-on-hand, tank levels, and active alerts across your entire fleet in one view — on any device, from anywhere.</p>
-          <div class="hiw-benefit">
-            <span class="hiw-benefit-label">So What:</span>
-            <p class="hiw-benefit-text">No more begging for WhatsApp reports. You gain the freedom to grow because you don't have to be physically present to prevent theft.</p>
-          </div>
-        </div>
-        <div class="hiw-visual-wrap">
-          <div class="hiw-proof-strip">
-            <img src="./assets/hiw-visual-3.png" alt="Fleet Health Dashboard Mobile UI">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      THE COST OF INACTION (ROI CALCULATOR REVISION)
 ═══════════════════════════════════════════════ -->
-<section id="calculator" class="section-pad bg-surface">
-  <div class="container">
-    <div class="container-tight text-center mb-48">
-      <div class="section-label fade-up justify-center">ROI Assessment</div>
-      <h2 class="section-h2 mb-md fade-up">
-        The Cost of Inaction.
-      </h2>
-      <p class="section-intro centered mb-sm fade-up delay-1">
-        Use industry benchmarks to see exactly how much volume is vanishing from your pumps and tanks.
-      </p>
-    </div>
-    <div class="calc-wrap">
-      <div class="calc-card fade-up">
-        <div class="calc-toggle-row">
-          <span class="calc-toggle-label">Currency</span>
-          <div class="toggle-pill">
-            <button class="toggle-opt active" id="ngn-btn">₦ NGN</button>
-            <button class="toggle-opt" id="usd-btn">$ USD</button>
-          </div>
+    <section id="calculator" class="section-pad bg-surface">
+      <div class="container">
+        <div class="container-tight text-center mb-48">
+          <div class="section-label fade-up justify-center">ROI Assessment</div>
+          <h2 class="section-h2 mb-md fade-up">The Cost of Inaction.</h2>
+          <p class="section-intro centered mb-sm fade-up delay-1">
+            Use industry benchmarks to see exactly how much volume is vanishing
+            from your pumps and tanks.
+          </p>
         </div>
+        <div class="calc-wrap">
+          <div class="calc-card fade-up">
+            <div class="calc-toggle-row">
+              <span class="calc-toggle-label">Currency</span>
+              <div class="toggle-pill">
+                <button class="toggle-opt active" id="ngn-btn">₦ NGN</button>
+                <button class="toggle-opt" id="usd-btn">$ USD</button>
+              </div>
+            </div>
 
-        <!-- Stations Slider -->
-        <div class="calc-slider-label">
-          <span>Number of stations</span>
-          <div>
-            <span class="calc-count" id="station-display">1</span>
-            <span class="calc-count unit"> station</span>
-          </div>
-        </div>
-        <input type="range" id="station-slider" min="1" max="10" value="1" step="1" />
+            <!-- Stations Slider -->
+            <div class="calc-slider-label">
+              <span>Number of stations</span>
+              <div>
+                <span class="calc-count" id="station-display">1</span>
+                <span class="calc-count unit"> station</span>
+              </div>
+            </div>
+            <input
+              type="range"
+              id="station-slider"
+              min="1"
+              max="10"
+              value="1"
+              step="1"
+            />
 
-        <!-- Volume Slider -->
-        <div class="calc-slider-label mt-24">
-          <span>Avg. Monthly Volume per Station (Liters)</span>
-          <div>
-            <span class="calc-count" id="volume-display">100,000</span>
-            <span class="calc-count unit"> L</span>
-          </div>
-        </div>
-        <input type="range" id="volume-slider" min="20000" max="300000" value="100000" step="5000" />
+            <!-- Volume Slider -->
+            <div class="calc-slider-label mt-24">
+              <span>Avg. Monthly Volume per Station (Liters)</span>
+              <div>
+                <span class="calc-count" id="volume-display">100,000</span>
+                <span class="calc-count unit"> L</span>
+              </div>
+            </div>
+            <input
+              type="range"
+              id="volume-slider"
+              min="20000"
+              max="300000"
+              value="100000"
+              step="5000"
+            />
 
-        <div class="calc-metrics mt-48">
-          <div class="calc-metric">
-            <div class="calc-metric-label">Annual Revenue Leakage</div>
-            <div class="calc-metric-value"><span id="sym">₦</span><span id="metric-leakage">5,460,000</span></div>
-            <div class="calc-metric-sub">Capital lost to meter-tampering and "ghost" liters.</div>
-          </div>
-          <div class="calc-metric">
-            <div class="calc-metric-label">Operational Recovery</div>
-            <div class="calc-metric-value"><span class="sym2">₦</span><span id="metric-recovery">1,824,400</span></div>
-            <div class="calc-metric-sub">Estimated savings from eliminated reconciliation errors.</div>
-          </div>
-          <div class="calc-metric">
-            <div class="calc-metric-label">Break-Even Point</div>
-            <div class="calc-metric-value"><span id="metric-payback">1.5</span> <span class="calc-unit-small">Months</span></div>
-            <div class="calc-metric-sub">Payback period vs. implementation cost.</div>
+            <div class="calc-metrics mt-48">
+              <div class="calc-metric">
+                <div class="calc-metric-label">Annual Revenue Leakage</div>
+                <div class="calc-metric-value">
+                  <span id="sym">₦</span
+                  ><span id="metric-leakage">5,460,000</span>
+                </div>
+                <div class="calc-metric-sub">
+                  Capital lost to meter-tampering and "ghost" liters.
+                </div>
+              </div>
+              <div class="calc-metric">
+                <div class="calc-metric-label">Operational Recovery</div>
+                <div class="calc-metric-value">
+                  <span class="sym2">₦</span
+                  ><span id="metric-recovery">1,824,400</span>
+                </div>
+                <div class="calc-metric-sub">
+                  Estimated savings from eliminated reconciliation errors.
+                </div>
+              </div>
+              <div class="calc-metric">
+                <div class="calc-metric-label">Break-Even Point</div>
+                <div class="calc-metric-value">
+                  <span id="metric-payback">1.5</span>
+                  <span class="calc-unit-small">Months</span>
+                </div>
+                <div class="calc-metric-sub">
+                  Payback period vs. implementation cost.
+                </div>
+              </div>
+            </div>
+            <p class="calc-disclaimer mt-24">
+              * Based on a conservative 0.7% industry shrinkage rate
+              (Meter-tampering, Tank-drift, and Attendant-shortages). High-risk
+              locations typically see 1.5% - 2.2% loss. ForecourtOS is designed
+              to reduce this to &lt;0.05%.
+            </p>
           </div>
         </div>
-        <p class="calc-disclaimer mt-24">
-          * Based on a conservative 0.7% industry shrinkage rate (Meter-tampering, Tank-drift, and Attendant-shortages). High-risk locations typically see 1.5% - 2.2% loss. ForecourtOS is designed to reduce this to &lt;0.05%.
-        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      WAITLIST
 ═══════════════════════════════════════════════ -->
-<section id="waitlist" class="section-pad">
-  <div class="container">
-    <div class="waitlist-card fade-up">
-      <div class="section-label">Early Access</div>
-      <h2 class="waitlist-h">
-        Request Priority Onboarding
-      </h2>
-      <p class="waitlist-sub">
-        We are currently deploying ForecourtOS in limited batches to ensure 100% uptime for every pump. Fill in your details to secure a slot in our next rollout.
-      </p>
+    <section id="waitlist" class="section-pad">
+      <div class="container">
+        <div class="waitlist-card fade-up">
+          <div class="section-label">Early Access</div>
+          <h2 class="waitlist-h">Request Priority Onboarding</h2>
+          <p class="waitlist-sub">
+            We are currently deploying ForecourtOS in limited batches to ensure
+            100% uptime for every pump. Fill in your details to secure a slot in
+            our next rollout.
+          </p>
 
-      <form id="waitlist-form" class="wl-form">
-        <input type="text" name="_gotcha" style="display:none"> <!-- Spam Protection -->
-        <div class="input-group">
-          <input type="text" id="wl-name" name="name" placeholder="Your Full Name" required>
-        </div>
-        <div class="input-group">
-          <input type="email" id="wl-email" name="email" placeholder="Business Email" required>
-        </div>
-        <div class="input-group">
-          <input type="tel" id="wl-phone" name="phone" placeholder="WhatsApp Number (for verification)" required>
-        </div>
-        <div class="input-group">
-          <select id="wl-stations" name="stations" required>
-            <option value="" disabled selected>How many stations do you manage?</option>
-            <option value="1">1 Station</option>
-            <option value="2-5">2 - 5 Stations</option>
-            <option value="6-10">6 - 10 Stations</option>
-            <option value="11+">11+ Stations (Enterprise)</option>
-          </select>
-        </div>
-        <button type="submit" id="wl-submit" class="btn-primary w-full">Request Access for My Fleet</button>
-        <p class="fs-14 text-muted-c mt-12 text-center">No spam. Only operational updates.</p>
-      </form>
+          <form id="waitlist-form" class="wl-form">
+            <input type="text" name="_gotcha" style="display: none" />
+            <!-- Spam Protection -->
+            <div class="input-group">
+              <input
+                type="text"
+                id="wl-name"
+                name="name"
+                placeholder="Your Full Name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="email"
+                id="wl-email"
+                name="email"
+                placeholder="Business Email"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="tel"
+                id="wl-phone"
+                name="phone"
+                placeholder="WhatsApp Number (for verification)"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <select id="wl-stations" name="stations" required>
+                <option value="" disabled selected>
+                  How many stations do you manage?
+                </option>
+                <option value="1">1 Station</option>
+                <option value="2-5">2 - 5 Stations</option>
+                <option value="6-10">6 - 10 Stations</option>
+                <option value="11+">11+ Stations (Enterprise)</option>
+              </select>
+            </div>
+            <button type="submit" id="wl-submit" class="btn-primary w-full">
+              Request Access for My Fleet
+            </button>
+            <p class="fs-14 text-muted-c mt-12 text-center">
+              No spam. Only operational updates.
+            </p>
+          </form>
 
-      <div class="form-success" id="form-success">
-        <div class="success-icon">✓</div>
-        <h3>Access Request Received.</h3>
-        <p class="mb-24"><strong>What Happens Next:</strong></p>
-        <ul class="success-steps text-start list-unstyled">
-          <li class="mb-12"><span class="text-accent me-2">01.</span> <strong>Verification in progress.</strong> Our team is reviewing your station credentials.</li>
-          <li class="mb-12"><span class="text-accent me-2">02.</span> <strong>WhatsApp Contact:</strong> A ForecourtOS specialist will contact you via WhatsApp within 24 hours.</li>
-          <li class="mb-12"><span class="text-accent me-2">03.</span> <strong>Technical Screening:</strong> We'll schedule a 5-minute call to qualify your fleet for the next rollout.</li>
-        </ul>
-        <p class="mt-24 text-muted fs-14">Integrity is our priority. We verify every operator manually to ensure the highest data security for our pilots.</p>
+          <div class="form-success" id="form-success">
+            <div class="success-icon">✓</div>
+            <h3>Access Request Received.</h3>
+            <p class="mb-24"><strong>What Happens Next:</strong></p>
+            <ul class="success-steps text-start list-unstyled">
+              <li class="mb-12">
+                <span class="text-accent me-2">01.</span>
+                <strong>Verification in progress.</strong> Our team is reviewing
+                your station credentials.
+              </li>
+              <li class="mb-12">
+                <span class="text-accent me-2">02.</span>
+                <strong>WhatsApp Contact:</strong> A ForecourtOS specialist will
+                contact you via WhatsApp within 24 hours.
+              </li>
+              <li class="mb-12">
+                <span class="text-accent me-2">03.</span>
+                <strong>Technical Screening:</strong> We'll schedule a 5-minute
+                call to qualify your fleet for the next rollout.
+              </li>
+            </ul>
+            <p class="mt-24 text-muted fs-14">
+              Integrity is our priority. We verify every operator manually to
+              ensure the highest data security for our pilots.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      PRICING
 ═══════════════════════════════════════════════ -->
-<section id="pricing" class="section-pad bg-surface">
-  <div class="container">
-    <div class="text-center mb-52">
-      <div class="section-label fade-up justify-center">Pricing</div>
-      <h2 class="section-h2 mb-md fade-up">
-        Straightforward pricing.<br>No surprises.
-      </h2>
-      <p class="section-intro centered mb-sm fade-up delay-1">
-        Free during beta. Locked-in pricing for early adopters.
-      </p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card fade-up">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-price">₦0<span class="period"> / mo</span></div>
-        <p class="pricing-desc">Full access during the private beta period. No card required.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="check">✓</span>1 station</li>
-          <li><span class="check">✓</span>Pump & tank management</li>
-          <li><span class="check">✓</span>Daily reports</li>
-          <li><span class="check">✓</span>Cash-at-hand tracking</li>
-          <li><span class="check">✓</span>Email support</li>
-        </ul>
-        <button class="pricing-cta">Join Beta</button>
+    <section id="pricing" class="section-pad bg-surface">
+      <div class="container">
+        <div class="text-center mb-52">
+          <div class="section-label fade-up justify-center">Pricing</div>
+          <h2 class="section-h2 mb-md fade-up">
+            Straightforward pricing.<br />No surprises.
+          </h2>
+          <p class="section-intro centered mb-sm fade-up delay-1">
+            Free during beta. Locked-in pricing for early adopters.
+          </p>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card fade-up">
+            <div class="pricing-tier">Starter</div>
+            <div class="pricing-price">₦0<span class="period"> / mo</span></div>
+            <p class="pricing-desc">
+              Full access during the private beta period. No card required.
+            </p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span>1 station</li>
+              <li><span class="check">✓</span>Pump & tank management</li>
+              <li><span class="check">✓</span>Daily reports</li>
+              <li><span class="check">✓</span>Cash-at-hand tracking</li>
+              <li><span class="check">✓</span>Email support</li>
+            </ul>
+            <button class="pricing-cta">Join Beta</button>
+          </div>
+          <div class="pricing-card featured fade-up delay-1">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-tier text-accent">Growth</div>
+            <div class="pricing-price">
+              Custom<span class="period"> / mo</span>
+            </div>
+            <p class="pricing-desc">
+              For operators running 2–5 stations who need full network control.
+            </p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span>Up to 5 stations</li>
+              <li><span class="check">✓</span>Everything in Starter</li>
+              <li><span class="check">✓</span>Executive dashboard</li>
+              <li><span class="check">✓</span>Delivery reconciliation</li>
+              <li><span class="check">✓</span>Smart alerts engine</li>
+              <li><span class="check">✓</span>Retainer management</li>
+              <li><span class="check">✓</span>Shift management</li>
+            </ul>
+            <button class="pricing-cta featured-cta">Get Early Access</button>
+          </div>
+          <div class="pricing-card fade-up delay-2">
+            <div class="pricing-tier">Enterprise</div>
+            <div class="pricing-price fs-28">Custom</div>
+            <p class="pricing-desc">
+              For networks of 6+ stations requiring dedicated support and custom
+              configuration.
+            </p>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span>Unlimited stations</li>
+              <li><span class="check">✓</span>Everything in Growth</li>
+              <li><span class="check">✓</span>Dedicated account manager</li>
+              <li><span class="check">✓</span>Custom onboarding</li>
+              <li><span class="check">✓</span>P&L & margin tracking</li>
+              <li><span class="check">✓</span>API access</li>
+            </ul>
+            <button class="pricing-cta">Contact Us</button>
+          </div>
+        </div>
       </div>
-      <div class="pricing-card featured fade-up delay-1">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier text-accent">Growth</div>
-        <div class="pricing-price">Custom<span class="period"> / mo</span></div>
-        <p class="pricing-desc">For operators running 2–5 stations who need full network control.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="check">✓</span>Up to 5 stations</li>
-          <li><span class="check">✓</span>Everything in Starter</li>
-          <li><span class="check">✓</span>Executive dashboard</li>
-          <li><span class="check">✓</span>Delivery reconciliation</li>
-          <li><span class="check">✓</span>Smart alerts engine</li>
-          <li><span class="check">✓</span>Retainer management</li>
-          <li><span class="check">✓</span>Shift management</li>
-        </ul>
-        <button class="pricing-cta featured-cta">Get Early Access</button>
-      </div>
-      <div class="pricing-card fade-up delay-2">
-        <div class="pricing-tier">Enterprise</div>
-        <div class="pricing-price fs-28">Custom</div>
-        <p class="pricing-desc">For networks of 6+ stations requiring dedicated support and custom configuration.</p>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li><span class="check">✓</span>Unlimited stations</li>
-          <li><span class="check">✓</span>Everything in Growth</li>
-          <li><span class="check">✓</span>Dedicated account manager</li>
-          <li><span class="check">✓</span>Custom onboarding</li>
-          <li><span class="check">✓</span>P&L & margin tracking</li>
-          <li><span class="check">✓</span>API access</li>
-        </ul>
-        <button class="pricing-cta">Contact Us</button>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand-name">
-        <img src="./assets/FORECOURTOS-ICON.svg" alt="brand logo" srcset="" class="nav-logo-icon">
-        Forecourt<span class="logo-os-accent">OS</span>
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand-name">
+            <img
+              src="./assets/FORECOURTOS-ICON.svg"
+              alt="brand logo"
+              srcset=""
+              class="nav-logo-icon"
+            />
+            Forecourt<span class="logo-os-accent">OS</span>
+          </div>
+          <p class="footer-brand-desc">
+            The operating system for fuel station retail in Nigeria. Built for
+            owners who run more than one station and need more than a
+            spreadsheet.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Twitter">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.07.36a9 9 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0C13.51 0 11.4 2.11 11.4 4.71c0 .37.04.72.11 1.06C7.55 5.59 4.08 3.7 1.64 0.85a4.73 4.73 0 0 0-.61 2.37c0 1.63.83 3.07 2.1 3.91a4.49 4.49 0 0 1-2.05-.57v.06c0 2.28 1.62 4.18 3.77 4.61a4.54 4.54 0 0 1-2.04.08 4.52 4.52 0 0 0 4.22 3.14A9.06 9.06 0 0 1 0 20.29a12.78 12.78 0 0 0 6.92 2.03c8.3 0 12.84-6.88 12.84-12.85 0-.19 0-.38-.01-.57A9.18 9.18 0 0 0 23 3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/ForecourtOS"
+              class="footer-social"
+              aria-label="GitHub"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#calculator">ROI Calculator</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="https://github.com/ForecourtOS">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="footer-brand-desc">
-        The operating system for fuel station retail in Nigeria. Built for owners who run more than one station and need more than a spreadsheet.
-      </p>
-      <div class="footer-socials">
-        <a href="#" class="footer-social" aria-label="Twitter">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.07.36a9 9 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0C13.51 0 11.4 2.11 11.4 4.71c0 .37.04.72.11 1.06C7.55 5.59 4.08 3.7 1.64 0.85a4.73 4.73 0 0 0-.61 2.37c0 1.63.83 3.07 2.1 3.91a4.49 4.49 0 0 1-2.05-.57v.06c0 2.28 1.62 4.18 3.77 4.61a4.54 4.54 0 0 1-2.04.08 4.52 4.52 0 0 0 4.22 3.14A9.06 9.06 0 0 1 0 20.29a12.78 12.78 0 0 0 6.92 2.03c8.3 0 12.84-6.88 12.84-12.85 0-.19 0-.38-.01-.57A9.18 9.18 0 0 0 23 3z"/></svg>
-        </a>
-        <a href="https://github.com/ForecourtOS" class="footer-social" aria-label="GitHub">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-        <a href="#" class="footer-social" aria-label="LinkedIn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2026 ForecourtOS. All rights reserved.</span
+        >
+        <span class="footer-made">Built in Nigeria.</span>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Platform</div>
-      <ul class="footer-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#calculator">ROI Calculator</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="https://github.com/ForecourtOS">GitHub</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Legal</div>
-      <ul class="footer-links">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 ForecourtOS. All rights reserved.</span>
-    <span class="footer-made">Built in Nigeria.</span>
-  </div>
-</footer>
+    </footer>
 
-<!-- ═══════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════════════ -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js" defer></script>
-<script src="js/script.js" defer></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
+  </body>
 </html>
