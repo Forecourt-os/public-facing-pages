@@ -1688,6 +1688,13 @@ footer {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .hiw-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hiw-benefit-text {
+    width: 100%;
+  }
   .hiw-connector {
     display: none;
   }
