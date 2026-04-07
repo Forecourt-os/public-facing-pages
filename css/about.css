@@ -406,7 +406,7 @@
 /* ─── TEAM ───────────────────────────────────────────── */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   max-width: 900px;
   margin: 0 auto;
@@ -549,22 +549,194 @@
 }
 
 @media (max-width: 767px) {
+
+  /* ── 1. Hero — Typography & Spacing ──────────────── */
   #about-hero {
-    padding: 140px 0 72px;
+    padding: 120px 0 60px;
+  }
+  .about-hero-h1 {
+    font-size: clamp(32px, 5vw, 60px);
+  }
+  .about-hero-sub {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .about-hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .about-hero-actions .btn-primary,
+  .about-hero-actions .btn-ghost {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ── 2. Stats Bar — Readability ──────────────────── */
+  .about-stats {
+    padding: 36px 0;
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .stat-value {
-    font-size: 28px;
+    font-size: 26px;
   }
-  .team-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+  .stat-label {
+    font-size: 10px;
+  }
+  .stat-item {
+    padding: 0 16px;
+  }
+
+  /* ── 3. Mission / Values — Single Column ─────────── */
+  .values-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+  .value-card {
+    padding: 28px 20px;
+  }
+  .value-title {
+    font-size: 16px;
+  }
+  .value-desc {
+    font-size: 13px;
+  }
+  .mission-header {
+    margin-bottom: 40px;
+  }
+
+  /* ── 4. Built-by — Stack & Reorder ───────────────── */
+  .built-grid {
+    grid-template-columns: 1fr;
+  }
+  .built-copy {
+    order: -1;
+  }
+  .built-visual {
+    order: 1;
+  }
+  .built-mockup-body {
+    padding: 20px 16px;
   }
   .built-gauge-row {
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .built-stats-mini {
+    width: 100%;
+  }
+  .built-desc {
+    font-size: 14px;
+  }
+  .built-checks {
+    gap: 12px;
+  }
+
+  /* ── 5. Team — Two Column ────────────────────────── */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .team-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  .team-avatar-placeholder svg {
+    width: 30px;
+    height: 30px;
+  }
+  .team-name {
+    font-size: 14px;
+  }
+  .team-bio {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* ── 6. CTA — Mobile Centering & Button Stack ────── */
+  .about-cta-h2 {
+    font-size: clamp(26px, 4vw, 48px);
+  }
+  .about-cta-sub {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .about-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .about-cta-actions .btn-primary,
+  .about-cta-actions .btn-ghost {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* ── 7. Global Mobile Polish ─────────────────────── */
+  .section-pad {
+    padding: 64px 0;
+  }
+  .section-h2 {
+    font-size: clamp(26px, 3vw, 42px);
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  #mission,
+  #built-for,
+  #team,
+  #about-cta {
+    scroll-margin-top: 80px;
+  }
+
+  /* ── 8. Touch Targets — Accessibility ────────────── */
+  .btn-primary,
+  .btn-ghost,
+  .nav-cta,
+  .mission-manifesto-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-links li a {
+    padding: 6px 0;
+    display: inline-block;
+  }
+
+  /* ── 9. Navbar — Mobile Refinement ───────────────── */
+  #mobile-menu {
+    padding: 80px 24px 32px;
+  }
+  .mobile-link {
+    font-size: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    text-align: center;
+  }
+  .mobile-link:last-child {
+    border-bottom: none;
+    color: var(--neon);
+    font-weight: 700;
+  }
+
+  /* ── 10. Footer — Mobile Stack ───────────────────── */
+  .footer-brand-desc {
+    font-size: 13px;
+  }
+  .footer-col-title {
+    margin-bottom: 12px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
 }
 
@@ -574,7 +746,7 @@
   }
   .team-grid {
     grid-template-columns: 1fr;
-    max-width: 240px;
+    max-width: none;
     margin: 0 auto;
   }
 }
