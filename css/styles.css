@@ -16,6 +16,260 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 
+/* ─── LIGHT MODE TOKENS ──────────────────────────────── */
+[data-theme="light"] {
+  --bg: #f5f5f0;
+  --surface: rgba(230, 235, 220, 0.75);
+  --surface-2: #e8e8e3;
+  --border: rgba(60, 80, 40, 0.12);
+  --border-m: rgba(60, 80, 40, 0.2);
+  --neon: #1a8a0e;
+  --neon-dim: rgba(26, 138, 14, 0.1);
+  --neon-glow: rgba(26, 138, 14, 0.25);
+  --text: #1a1a1a;
+  --muted: #5a6b52;
+  --muted-2: #8a9880;
+}
+
+/* ─── LIGHT MODE — Body & Backgrounds ────────────────── */
+[data-theme="light"] body {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(200, 220, 180, 0.25) 0%, transparent 70%),
+    radial-gradient(circle at 0% 0%, rgba(210, 225, 190, 0.15) 0%, transparent 50%),
+    var(--bg);
+}
+
+/* ─── LIGHT MODE — Text Gradient ─────────────────────── */
+[data-theme="light"] .text-gradient {
+  background: linear-gradient(135deg, #1a8a0e 0%, #2db51e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── LIGHT MODE — Navbar ────────────────────────────── */
+[data-theme="light"] #main-nav.scrolled {
+  background: rgba(245, 245, 240, 0.92);
+}
+[data-theme="light"] .nav-cta {
+  color: #fff;
+}
+[data-theme="light"] .btn-ghost:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ─── LIGHT MODE — Mobile Menu ───────────────────────── */
+[data-theme="light"] .mobile-menu {
+  background: rgba(245, 245, 240, 0.98);
+}
+
+/* ─── LIGHT MODE — Hero ──────────────────────────────── */
+[data-theme="light"] .hero-radial {
+  background: radial-gradient(ellipse, rgba(26, 138, 14, 0.06) 0%, transparent 65%);
+}
+[data-theme="light"] .btn-primary {
+  color: #fff;
+}
+[data-theme="light"] .btn-primary:hover {
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(26, 138, 14, 0.2);
+}
+
+/* ─── LIGHT MODE — Dashboard Mockup ──────────────────── */
+[data-theme="light"] .dashboard {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 0 0 1px rgba(26, 138, 14, 0.08),
+    0 40px 80px rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .db-titlebar {
+  background: rgba(245, 245, 240, 0.95);
+}
+[data-theme="light"] .db-metric {
+  background: var(--surface-2);
+}
+[data-theme="light"] .db-chart-area {
+  background: rgba(245, 245, 240, 0.8);
+}
+[data-theme="light"] .db-bar {
+  background: rgba(26, 138, 14, 0.15);
+}
+[data-theme="light"] .db-bar:hover {
+  background: rgba(26, 138, 14, 0.28);
+}
+[data-theme="light"] .db-bar.active {
+  box-shadow: 0 0 12px rgba(26, 138, 14, 0.3);
+}
+[data-theme="light"] .db-station-row {
+  background: var(--surface-2);
+}
+[data-theme="light"] .db-station-bar-wrap {
+  background: rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .db-status-badge {
+  background: rgba(26, 138, 14, 0.08);
+  border-color: rgba(26, 138, 14, 0.18);
+}
+[data-theme="light"] .db-chart-tag {
+  background: rgba(26, 138, 14, 0.1);
+}
+[data-theme="light"] .badge-green {
+  background: rgba(26, 138, 14, 0.1);
+}
+[data-theme="light"] .badge-yellow {
+  background: rgba(200, 150, 0, 0.1);
+  color: #b38600;
+}
+[data-theme="light"] .badge-red {
+  background: rgba(200, 50, 50, 0.1);
+  color: #c03030;
+}
+[data-theme="light"] .ticker-item .val {
+  text-shadow: none;
+}
+[data-theme="light"] .ticker-item .dn {
+  color: #c03030;
+}
+[data-theme="light"] .ticker-item .warning {
+  color: #b38600;
+}
+
+/* ─── LIGHT MODE — Pulse Bar ─────────────────────────── */
+[data-theme="light"] .pulse-bar {
+  background: #eeeee8;
+}
+
+/* ─── LIGHT MODE — Founder Quote ─────────────────────── */
+[data-theme="light"] .founder-blockquote::before {
+  color: rgba(26, 138, 14, 0.15);
+}
+
+/* ─── LIGHT MODE — Features Grid ─────────────────────── */
+[data-theme="light"] .feature-cell {
+  background: var(--bg);
+}
+[data-theme="light"] .feature-cell:hover {
+  background: rgba(230, 240, 220, 0.6);
+}
+[data-theme="light"] .feature-cell::before {
+  background: linear-gradient(90deg, transparent, rgba(26, 138, 14, 0.08), transparent);
+}
+
+/* ─── LIGHT MODE — How It Works ──────────────────────── */
+[data-theme="light"] .hiw-proof-strip {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .hiw-benefit {
+  background: rgba(26, 138, 14, 0.04);
+}
+[data-theme="light"] .hiw-num {
+  background: var(--surface);
+}
+[data-theme="light"] .hiw-num::before {
+  background: var(--bg);
+}
+
+/* ─── LIGHT MODE — Calculator ────────────────────────── */
+[data-theme="light"] .calc-card {
+  background: rgba(255, 255, 255, 0.85);
+}
+[data-theme="light"] .calc-card::before {
+  background: radial-gradient(ellipse, rgba(26, 138, 14, 0.04) 0%, transparent 70%);
+}
+[data-theme="light"] .calc-metric {
+  background: rgba(245, 245, 240, 0.9);
+}
+[data-theme="light"] .toggle-pill {
+  background: var(--surface-2);
+}
+[data-theme="light"] .toggle-opt.active {
+  color: #fff;
+}
+
+/* ─── LIGHT MODE — Waitlist ──────────────────────────── */
+[data-theme="light"] #waitlist::before {
+  background: radial-gradient(ellipse, rgba(26, 138, 14, 0.04) 0%, transparent 70%);
+}
+[data-theme="light"] .waitlist-card {
+  background: rgba(255, 255, 255, 0.9);
+}
+[data-theme="light"] .wl-form input,
+[data-theme="light"] .wl-form select {
+  background: rgba(245, 245, 240, 0.8);
+}
+[data-theme="light"] .form-control-dark {
+  background: var(--surface-2);
+}
+[data-theme="light"] .form-control-dark option {
+  background: #f5f5f0;
+}
+
+/* ─── LIGHT MODE — Pricing ───────────────────────────── */
+[data-theme="light"] .pricing-card {
+  background: rgba(255, 255, 255, 0.8);
+}
+[data-theme="light"] .pricing-card.featured {
+  background: rgba(240, 250, 235, 0.85);
+  border-color: rgba(26, 138, 14, 0.25);
+}
+[data-theme="light"] .pricing-card.featured:hover {
+  border-color: rgba(26, 138, 14, 0.4);
+}
+[data-theme="light"] .pricing-badge {
+  color: #fff;
+}
+[data-theme="light"] .pricing-cta.featured-cta {
+  color: #fff;
+}
+[data-theme="light"] .pricing-cta.featured-cta:hover {
+  box-shadow: 0 4px 20px rgba(26, 138, 14, 0.2);
+}
+
+/* ─── LIGHT MODE — Utilities ─────────────────────────── */
+[data-theme="light"] .text-warning {
+  color: #b38600;
+}
+[data-theme="light"] .text-error {
+  color: #c03030;
+}
+[data-theme="light"] .bg-surface {
+  background: rgba(235, 240, 228, 0.75) !important;
+}
+[data-theme="light"] .mockup-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(26, 138, 14, 0.05) 0%, transparent 70%);
+}
+
+/* ─── THEME TOGGLE BUTTON ────────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-m);
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--neon);
+  color: var(--neon);
+}
+.theme-icon-sun,
+.theme-icon-moon {
+  width: 18px;
+  height: 18px;
+}
+/* Dark mode: show sun icon to switch to light */
+.theme-icon-moon { display: none; }
+/* Light mode: show moon icon to switch to dark */
+[data-theme="light"] .theme-icon-sun { display: none; }
+[data-theme="light"] .theme-icon-moon { display: block; }
+
 /* ─── RESET ───────────────────────────────────────────── */
 *,
 *::before,
