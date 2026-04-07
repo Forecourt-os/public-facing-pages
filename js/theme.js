@@ -3,10 +3,10 @@
    Loaded synchronously in <head> to prevent FOUC
 ═══════════════════════════════════════════════════════ */
 
-// Immediate: apply saved theme before paint
+// Immediate: apply saved theme before paint (light is default)
 (function () {
   var saved = localStorage.getItem('fos-theme');
-  if (saved === 'light') {
+  if (saved !== 'dark') {
     document.documentElement.setAttribute('data-theme', 'light');
   }
 })();
