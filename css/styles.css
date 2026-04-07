@@ -1685,8 +1685,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .hiw-steps {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 64px;
   }
   .hiw-row {
     grid-template-columns: 1fr;
@@ -1698,9 +1697,33 @@ footer {
   .hiw-connector {
     display: none;
   }
+
+  /* ── 5. HIW: Cancel even-row column swap in single-column ── */
+  .hiw-row:nth-child(even) .hiw-step {
+    grid-column: auto;
+  }
+  .hiw-row:nth-child(even) .hiw-visual-wrap {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* ── 5. HIW: Cancel 3D perspective on proof strips ── */
+  .hiw-proof-strip,
+  .hiw-row:nth-child(even) .hiw-proof-strip {
+    transform: none;
+  }
+  .hiw-row:hover .hiw-proof-strip {
+    transform: scale(1.02);
+  }
+
+  /* ── 5. HIW: Reposition vertical connecting line ── */
+  .hiw-steps::before {
+    left: 12px;
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 480px;
   }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -1717,23 +1740,163 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 767px) {
+
+  /* ── 1. Hero Section ────────────────────────────────── */
   #hero {
     padding: 120px 0 80px;
   }
-  .section-pad {
-    padding: 72px 0;
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 100%;
   }
-  .nav-links,
-  .nav-cta {
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-trust {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .hero-trust-dot {
     display: none;
   }
-  .hamburger {
-    display: flex;
+  .mockup-wrap {
+    margin-bottom: -60px;
+  }
+  .dashboard {
+    animation: none;
   }
   .hero-h1 {
     font-size: 36px;
   }
+
+  /* ── 2. Ticker / Pulse Bar ──────────────────────────── */
+  .pulse-bar {
+    padding: 14px 0;
+  }
+  .ticker-item {
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  /* ── 3. Founder Quote ───────────────────────────────── */
+  .founder-blockquote {
+    font-size: 20px;
+  }
+  .founder-blockquote::before {
+    font-size: 40px;
+    top: -10px;
+    left: -8px;
+  }
+
+  /* ── 4. Features Grid ───────────────────────────────── */
+  .feature-cell {
+    padding: 28px;
+  }
+  .feature-title {
+    font-size: 17px;
+  }
+  .feature-desc {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .feature-number {
+    font-size: 10px;
+    bottom: 14px;
+    right: 16px;
+  }
+
+  /* ── 5. How It Works ────────────────────────────────── */
+  .hiw-steps {
+    gap: 48px;
+  }
+  .hiw-step-title {
+    font-size: 22px;
+  }
+  .hiw-step-desc {
+    font-size: 14px;
+  }
+  .hiw-benefit {
+    padding: 12px 16px;
+  }
+
+  /* ── 6. ROI Calculator ──────────────────────────────── */
+  .calc-card {
+    padding: 28px 24px;
+  }
+  .calc-metric {
+    padding: 16px;
+  }
+  .calc-metric-value {
+    font-size: 20px;
+  }
+  .calc-metric-label {
+    font-size: 10px;
+  }
+  .calc-count {
+    font-size: 20px;
+  }
+  .calc-slider-label span:first-child {
+    font-size: 12px;
+  }
+  .calc-toggle-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── 7. Waitlist Form ───────────────────────────────── */
+  .waitlist-card {
+    padding: 32px 24px;
+  }
+  .waitlist-h {
+    font-size: 24px;
+  }
+  .waitlist-sub {
+    font-size: 13px;
+  }
+  .wl-form input,
+  .wl-form select {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  .btn-primary.w-full {
+    min-height: 50px;
+    font-size: 15px;
+  }
+  .form-success {
+    padding: 24px 0;
+  }
+  .form-success h3 {
+    font-size: 20px;
+  }
+  .success-steps {
+    font-size: 13px;
+  }
+
+  /* ── 8. Pricing ─────────────────────────────────────── */
+  .pricing-card {
+    padding: 28px 24px;
+  }
+  .pricing-price {
+    font-size: 30px;
+  }
+  .pricing-features li {
+    font-size: 13px;
+  }
+  .pricing-grid {
+    max-width: 100%;
+  }
+
+  /* ── 9. Footer ──────────────────────────────────────── */
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1742,14 +1905,78 @@ footer {
   .footer-bottom {
     padding: 20px 24px 0;
   }
-  .calc-card {
-    padding: 28px 24px;
+  .footer-links a {
+    padding: 6px 0;
+    display: inline-block;
   }
-  .waitlist-card {
-    padding: 32px 24px;
+  .footer-social {
+    width: 36px;
+    height: 36px;
   }
-  .feature-cell {
-    padding: 28px;
+
+  /* ── 10. Global Mobile Polish ───────────────────────── */
+  .section-pad {
+    padding: 72px 0;
+  }
+  .section-intro {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  #features,
+  #how-it-works,
+  #calculator,
+  #waitlist,
+  #pricing {
+    scroll-margin-top: 80px;
+  }
+
+  /* Touch Targets */
+  .btn-primary,
+  .btn-ghost {
+    min-height: 48px;
+  }
+  .nav-cta {
+    min-height: 44px;
+  }
+  .hamburger {
+    display: flex;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Navbar & Mobile Menu */
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+  .mobile-menu a {
+    font-size: 26px;
+  }
+  .mobile-menu a.text-accent {
+    font-weight: 700;
+  }
+  .mobile-link:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* ── 480px — Extra-small screen refinements ──────────── */
+@media (max-width: 480px) {
+  .mockup-wrap {
+    margin-bottom: 0;
+  }
+  .db-metric-value {
+    font-size: 13px;
+  }
+  .db-station-name {
+    font-size: 9px;
+  }
+  .db-metrics {
+    gap: 6px;
+  }
+  .section-h2 {
+    font-size: 26px;
   }
 }
 
